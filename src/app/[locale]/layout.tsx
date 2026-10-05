@@ -9,7 +9,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "../globals.css";
 
-// Self-hosted fonts (latin + cyrillic), no requests to Google at runtime or build time
 import "@fontsource-variable/unbounded";
 import "@fontsource-variable/onest";
 import "@fontsource/jetbrains-mono/500.css";

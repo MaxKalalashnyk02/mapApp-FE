@@ -4,14 +4,12 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 
 type Pin = { name: string; where: string; status: string };
-/** [x, y, width, depth, height, hasBusiness] on a 440×440 plane */
 const BUILDINGS: [number, number, number, number, number, boolean?][] = [
   [30, 30, 70, 150, 96], [110, 30, 120, 60, 72], [110, 110, 60, 70, 50],
   [300, 30, 110, 60, 118, true], [300, 110, 50, 70, 66], [365, 110, 45, 70, 84],
   [30, 255, 90, 60, 80, true], [30, 330, 60, 80, 58], [140, 255, 90, 150, 128],
   [300, 255, 110, 55, 72], [300, 325, 60, 85, 104, true], [370, 325, 40, 85, 50],
 ];
-/** building index for each pin in messages map.pins */
 const PIN_BUILDINGS = [3, 6, 10, 0, 8];
 const TREES = [[8, 10], [34, 18], [14, 40], [40, 48]];
 
@@ -31,7 +29,6 @@ export default function IsoMap() {
   const [toast, setToast] = useState(0);
   const [swap, setSwap] = useState(false);
 
-  // scale the 3D scene to its column
   useEffect(() => {
     const stage = stageRef.current, scene = sceneRef.current;
     if (!stage || !scene) return;
@@ -45,7 +42,6 @@ export default function IsoMap() {
     return () => ro.disconnect();
   }, []);
 
-  // cycle highlighted business
   useEffect(() => {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let i = 0;
@@ -57,7 +53,6 @@ export default function IsoMap() {
     return () => { clearTimeout(to); if (iv) clearInterval(iv); };
   }, [pins.length]);
 
-  // swap toast text with a short fade
   useEffect(() => {
     if (active < 0) return;
     setSwap(true);
@@ -65,7 +60,6 @@ export default function IsoMap() {
     return () => clearTimeout(tm);
   }, [active]);
 
-  // pointer parallax on the whole hero
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const stage = stageRef.current, scene = sceneRef.current;
@@ -135,7 +129,6 @@ export default function IsoMap() {
         </div>
       </div>
 
-      {/* "just added" toast */}
       <div
         aria-live="polite"
         className="absolute right-0 bottom-0 z-[3] flex max-w-[260px] animate-rise-in items-center gap-3 rounded-[18px] border border-line bg-white p-2.5 pr-3 shadow-[0_24px_40px_-20px_rgba(120,40,0,.35)] [animation-delay:1.8s] sm:right-[2%] sm:bottom-[16%] lg:bottom-[4%] sm:max-w-[290px] sm:p-3 sm:pr-4"
@@ -150,11 +143,6 @@ export default function IsoMap() {
           <b className="block text-[15px] leading-snug">{p.name}</b>
           <span className="text-[13px] leading-snug text-ink-3">{p.where}</span>
         </div>
-      </div>
-
-      <div className="absolute bottom-[4%] left-[2%] z-[3] hidden max-w-[46%] animate-rise-in flex-wrap gap-2 [animation-delay:2s] lg:flex">
-        <span className="rounded-full border border-line bg-white/90 px-3 py-1.5 text-[13px] font-medium"><b className="text-orange-deep">●</b> {t("legendBiz")}</span>
-        <span className="rounded-full border border-line bg-white/90 px-3 py-1.5 text-[13px] font-medium"><b className="text-orange-deep">- -</b> {t("legendRoute")}</span>
       </div>
     </div>
   );

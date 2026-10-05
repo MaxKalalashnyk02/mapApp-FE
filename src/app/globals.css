@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* ---------- Design tokens (white + orange brand) ---------- */
 @theme {
   --color-paper: #ffffff;
   --color-tint: #fff4ec;
@@ -30,8 +29,6 @@
   @keyframes draw { from { stroke-dashoffset: 420; } }
 }
 
-/* next/font variables -> Tailwind font families */
-/* fonts: self-hosted via @fontsource (imported in app/[locale]/layout.tsx) */
 @theme {
   --font-display: "Unbounded Variable", "Arial Black", system-ui, sans-serif;
   --font-body: "Onest Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -76,7 +73,6 @@
   .faq-item summary::-webkit-details-marker { display: none; }
   .faq-item[open] .faq-plus { transform: rotate(45deg); }
 
-  /* scroll reveal: elements are always visible; motion only where supported */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
       .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
@@ -85,7 +81,6 @@
 }
 @keyframes reveal { from { transform: translateY(40px) scale(0.98); } }
 
-/* ---------- Isometric hero map (3D CSS, hard to express as utilities) ---------- */
 .iso-scene {
   position: absolute; left: 50%; top: 50%;
   width: 440px; height: 440px; margin: -220px 0 0 -220px;

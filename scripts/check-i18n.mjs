@@ -1,4 +1,3 @@
-// Verifies every locale in /messages has exactly the same keys as the base locale (uk).
 import { readFileSync, readdirSync } from "node:fs";
 
 const dir = new URL("../messages/", import.meta.url);

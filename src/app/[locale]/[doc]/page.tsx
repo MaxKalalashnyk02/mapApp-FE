@@ -46,14 +46,14 @@ export default async function LegalPage({ params }: { params: Params }) {
     <main>
       <Container className="pt-8 pb-16 sm:pt-12 sm:pb-20">
         <div className="grid items-start gap-5 md:grid-cols-[240px_minmax(0,1fr)] md:gap-14">
-          <nav aria-label={t("navLabel")} className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-1.5 md:sticky md:top-[92px] md:mx-0 md:flex-col md:overflow-visible md:px-0">
+          <nav aria-label={t("navLabel")} className="flex flex-wrap gap-2 md:sticky md:top-[92px] md:flex-col md:flex-nowrap md:gap-1">
             {LEGAL_SLUGS.map((s) => (
               <Link
                 key={s}
                 href={`/${s}`}
                 aria-current={s === doc ? "page" : undefined}
-                className={`rounded-xl px-3.5 py-2.5 text-[15px] font-medium whitespace-nowrap ${
-                  s === doc ? "bg-orange text-white" : "text-ink-2 hover:bg-tint"
+                className={`rounded-full border px-3.5 py-2 text-[14px] font-medium whitespace-nowrap md:rounded-xl md:border-0 md:py-2.5 md:text-[15px] ${
+                  s === doc ? "border-orange bg-orange text-white" : "border-line bg-white text-ink-2 hover:bg-tint"
                 }`}
               >
                 {t(`docs.${LEGAL_DOCS[s]}.title`)}

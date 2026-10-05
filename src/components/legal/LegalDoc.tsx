@@ -8,7 +8,6 @@ export type Block =
   | { type: "table"; head: string[]; rows: string[][] }
   | { type: "copy"; value: string };
 
-/** Renders a legal document described as JSON blocks in messages/<locale>.json */
 export default function LegalDoc({ blocks, vars }: { blocks: Block[]; vars: Vars }) {
   return (
     <>

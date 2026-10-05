@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 
-/** Phone frame used for app screen mockups */
 export function Phone({ children }: { children: ReactNode }) {
   return (
     <div className="relative aspect-[280/580] w-[min(280px,78vw)] rounded-[46px] bg-ink p-2.5 shadow-[0_50px_70px_-35px_rgba(120,40,0,.55),inset_0_0_0_2px_#3a2c24] transition duration-500 group-hover:-translate-y-2 group-hover:-rotate-[1.5deg]">

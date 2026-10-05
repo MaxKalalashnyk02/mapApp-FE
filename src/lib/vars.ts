@@ -3,7 +3,6 @@ import { site } from "@/config/site";
 import type { Vars } from "./rich";
 import type { Locale } from "@/i18n/routing";
 
-/** Variables available inside translation strings: {app}, {company}, {email}, ... */
 export async function getSiteVars(locale: Locale): Promise<Vars> {
   const t = await getTranslations({ locale });
   return {

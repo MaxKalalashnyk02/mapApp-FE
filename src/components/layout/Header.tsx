@@ -77,7 +77,6 @@ export default function Header() {
       </Container>
     </header>
 
-      {/* mobile menu (outside <header>: its backdrop-filter would trap a fixed child) */}
       <div
         id="mobile-menu"
         hidden={!open}

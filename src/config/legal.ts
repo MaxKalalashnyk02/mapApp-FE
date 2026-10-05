@@ -1,4 +1,3 @@
-/** URL slug -> translation key under legal.docs */
 export const LEGAL_DOCS = {
   privacy: "privacy",
   terms: "terms",

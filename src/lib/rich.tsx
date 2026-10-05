@@ -6,7 +6,6 @@ export type Vars = Record<string, string | number>;
 
 const TOKEN = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|\{[a-zA-Z]+\})/g;
 
-/** Value of a variable; unfilled "[...]" config values are highlighted. Email becomes a mailto link. */
 function renderVar(name: string, vars: Vars, key: string): ReactNode {
   const value = vars[name];
   if (value === undefined) return `{${name}}`;
@@ -21,11 +20,6 @@ function renderVar(name: string, vars: Vars, key: string): ReactNode {
   return <Fragment key={key}>{str}</Fragment>;
 }
 
-/**
- * Tiny markup for translation strings:
- *   **bold**   [text](/internal-or-https-link)   {variable}
- * Internal links ("/privacy") go through the locale-aware Link.
- */
 export function rich(text: string, vars: Vars = {}): ReactNode[] {
   return text.split(TOKEN).filter(Boolean).map((part, i) => {
     const key = `${i}`;
@@ -47,7 +41,6 @@ export function rich(text: string, vars: Vars = {}): ReactNode[] {
   });
 }
 
-/** Plain-text interpolation (for values that must be copyable). */
 export function interpolate(text: string, vars: Vars): string {
   return text.replace(/\{([a-zA-Z]+)\}/g, (_, k) => (vars[k] !== undefined ? String(vars[k]) : `{${k}}`));
 }
