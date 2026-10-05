@@ -2,14 +2,31 @@ import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
-import { AddScreen, FreshScreen, MapScreen, NotifyScreen, SearchScreen } from "@/components/phones/Screens";
+// import { FreshScreen } from "@/components/phones/Screens";
+import { PhoneScreenshot } from "@/components/phones/Phone";
+import AddFormDemo from "@/components/phones/AddFormDemo";
+import MapZoomDemo from "@/components/phones/MapZoomDemo";
 
 const ITEMS = [
-  { key: "map", screen: <MapScreen /> },
-  { key: "add", screen: <AddScreen /> },
-  { key: "fresh", screen: <FreshScreen /> },
-  { key: "search", screen: <SearchScreen /> },
-  { key: "notify", screen: <NotifyScreen /> },
+  {
+    key: "map",
+    screen: (
+      <PhoneScreenshot src="/screens/map-light.png" alt="mapApp" width={424} height={865}>
+        <MapZoomDemo src="/screens/map-zoom-layer.png" />
+      </PhoneScreenshot>
+    ),
+  },
+  {
+    key: "add",
+    screen: (
+      <PhoneScreenshot src="/screens/add-phone.png" alt="mapApp" width={424} height={865}>
+        <AddFormDemo />
+      </PhoneScreenshot>
+    ),
+  },
+  // { key: "fresh", screen: <FreshScreen /> },
+  { key: "search", screen: <PhoneScreenshot src="/screens/search-phone.png" alt="mapApp" width={424} height={865} /> },
+  { key: "notify", screen: <PhoneScreenshot src="/screens/news-phone.png" alt="mapApp" width={424} height={865} /> },
 ] as const satisfies readonly { key: string; screen: ReactNode }[];
 
 export default async function Features() {

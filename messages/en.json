@@ -29,7 +29,7 @@
     "titleHighlight": "living map",
     "lede": "mapApp shows the cafés, services and shops of your residential complex down to the section and entrance. Businesses are added in minutes, and the map updates right after moderation.",
     "facts": [
-      { "value": "3 steps", "label": "to add a business" },
+      { "value": "1 steps", "label": "to add a business" },
       { "value": "Section & door", "label": "instead of “somewhere in the yard”" },
       { "value": "Free", "label": "for residents" }
     ]
@@ -75,8 +75,8 @@
       },
       "add": {
         "eyebrow": "Quick add",
-        "title": "A new business on the map in 3 steps",
-        "text": "An owner or admin fills in a short form: name, category, location in the complex and opening hours. A photo of the storefront helps neighbours recognise the door.",
+        "title": "A new business on the map in 1 step",
+        "text": "An owner or admin fills in a short form: name, category, location and opening hours. A photo of the storefront helps neighbours recognise the door.",
         "ticks": ["Pick building, section and entrance from a list", "Hour templates: weekdays, weekends, 24/7", "Request goes straight to moderation"]
       },
       "fresh": {
@@ -159,7 +159,7 @@
     "title": "From request to a pin on the map",
     "text": "Every business is verified, so residents only see real places with the correct address.",
     "steps": [
-      { "title": "Request", "text": "The owner fills in a form in the app: name, category, location in the complex, hours.", "time": "~3 minutes" },
+      { "title": "Request", "text": "The owner fills in a form in the app: name, category, location, hours.", "time": "~2 minutes" },
       { "title": "Review", "text": "A moderator checks the address and contacts and asks for details if needed.", "time": "within 24 hours" },
       { "title": "Publishing", "text": "The pin appears on the map and residents get a notification.", "time": "right after approval" },
       { "title": "Updates", "text": "The owner changes hours or status, and the map stays current.", "time": "any time" }
@@ -223,7 +223,7 @@
           { "type": "h3", "text": "2.1. Data you provide" },
           { "type": "ul", "items": [
             "**Account data:** name, email address and/or phone number, password in hashed form. If you sign in with Apple or Google, we receive the identifier and email that service allows.",
-            "**Business data:** place name, category, location in the complex (building, section, entrance), opening hours, contact phone, website or social links, photos. This data is published on the map and visible to all users.",
+            "**Business data:** place name, category, location (building, section, entrance), opening hours, contact phone, website or social links, photos. This data is published on the map and visible to all users.",
             "**Reports:** content reports, map error reports and support requests."
           ] },
           { "type": "h3", "text": "2.2. Data collected automatically" },

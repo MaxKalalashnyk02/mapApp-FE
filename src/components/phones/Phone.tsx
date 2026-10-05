@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 export function Phone({ children }: { children: ReactNode }) {
   return (
@@ -7,6 +8,15 @@ export function Phone({ children }: { children: ReactNode }) {
         <div className="absolute top-[9px] left-1/2 z-10 h-6 w-[84px] -translate-x-1/2 rounded-full bg-ink" />
         {children}
       </div>
+    </div>
+  );
+}
+
+export function PhoneScreenshot({ src, alt, width, height, children }: { src: string; alt: string; width: number; height: number; children?: ReactNode }) {
+  return (
+    <div className="@container relative w-[min(280px,78vw)] transition duration-500 group-hover:-translate-y-2 group-hover:-rotate-[1.5deg]">
+      <Image src={src} alt={alt} width={width} height={height} sizes="280px" className="block h-auto w-full" />
+      {children}
     </div>
   );
 }
