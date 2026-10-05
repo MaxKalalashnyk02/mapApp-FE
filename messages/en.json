@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "title": "mapApp: the live map of Varshavskyi residential complex",
+    "description": "Cafés, services and shops of Varshavskyi residential complex on an interactive map, down to the section and entrance. Businesses are added in minutes."
+  },
+  "brand": {
+    "complex": "Varshavskyi"
+  },
+  "nav": {
+    "label": "Sections",
+    "features": "Features",
+    "how": "How it works",
+    "business": "For business",
+    "faq": "FAQ",
+    "download": "Download",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homeAria": "mapApp, go to home page",
+    "language": "Language"
+  },
+  "stores": {
+    "soon": "Coming soon to",
+    "appStore": "Download on the",
+    "googlePlay": "Get it on"
+  },
+  "hero": {
+    "chip": "Live map of {complex} complex",
+    "titleStart": "Everything near your home, on a",
+    "titleHighlight": "living map",
+    "lede": "mapApp shows the cafés, services and shops of your residential complex down to the section and entrance. Businesses are added in minutes, and the map updates right after moderation.",
+    "facts": [
+      { "value": "3 steps", "label": "to add a business" },
+      { "value": "Section & door", "label": "instead of “somewhere in the yard”" },
+      { "value": "Free", "label": "for residents" }
+    ]
+  },
+  "map": {
+    "aria": "Animated map of the residential complex with business pins",
+    "justAdded": "Just added",
+    "updated": "Updated on the map",
+    "legendBiz": "Business in building",
+    "legendRoute": "Route to entrance",
+    "pins": [
+      { "name": "Zerno Coffee", "where": "Building 3 · section 2 · street entrance", "status": "open until 21:00" },
+      { "name": "Pharmacy Next Door", "where": "Building 1 · courtyard entrance", "status": "open 24/7" },
+      { "name": "Nozhytsi Barbershop", "where": "Building 7 · section 1 · courtyard", "status": "open until 20:00" },
+      { "name": "Bread & Cheese Bakery", "where": "Building 4 · section 3", "status": "open until 20:00" },
+      { "name": "Lantern Kids Club", "where": "Building 5 · section 3", "status": "open until 19:00" }
+    ]
+  },
+  "categories": ["Cafés", "Pharmacies", "Bakeries", "Barbershops", "Pet shops", "Kids clubs", "Shoe repair", "Water delivery", "Dry cleaning", "Fitness", "Flowers", "Notaries"],
+  "problem": {
+    "eyebrow": "Why mapApp",
+    "questionStart": "How many times have you crossed the road for coffee when",
+    "questionHighlight": "there was a café in your own courtyard?",
+    "text": "In a large complex new places open every month, move and change their hours. Residents' chats lose this information fast. mapApp keeps it in one place and always up to date.",
+    "items": [
+      { "title": "Find what you need in a minute", "text": "Search by category and an “Open now” filter." },
+      { "title": "Exact address inside the complex", "text": "Building, section, street or courtyard entrance." },
+      { "title": "Fresh data without effort", "text": "Owners update their hours and status themselves." },
+      { "title": "Never miss what's new", "text": "Notifications when a new place opens in the complex." },
+      { "title": "Support local business", "text": "Neighbours choose places in their own complex more often." }
+    ]
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "A map kept up to date by the people who live and work here",
+    "text": "Residents find what they need. Business owners manage their own listing. A moderator makes sure only verified data reaches the map.",
+    "items": {
+      "map": {
+        "eyebrow": "Interactive map",
+        "title": "The whole complex at a glance",
+        "text": "Buildings, sections, entrances and courtyard paths on one plan. Tap a pin to see the hours, contacts and the route to the right door.",
+        "ticks": ["Pins accurate to the entrance", "Categories by colour and icon", "Route from your own entrance"]
+      },
+      "add": {
+        "eyebrow": "Quick add",
+        "title": "A new business on the map in 3 steps",
+        "text": "An owner or admin fills in a short form: name, category, location in the complex and opening hours. A photo of the storefront helps neighbours recognise the door.",
+        "ticks": ["Pick building, section and entrance from a list", "Hour templates: weekdays, weekends, 24/7", "Request goes straight to moderation"]
+      },
+      "fresh": {
+        "eyebrow": "Always current",
+        "title": "Changes reach the map right away",
+        "text": "A move, new hours, a temporary closure or a seasonal offer. The owner updates the listing, a moderator approves it, residents see fresh data.",
+        "ticks": ["“Temporarily closed” status in one tap", "Residents can report a mistake", "Change history for every listing"]
+      },
+      "search": {
+        "eyebrow": "Search & filters",
+        "title": "“Open now” right next to your entrance",
+        "text": "Search by name or category. mapApp shows what is open right now and sorts places by distance from your building.",
+        "ticks": ["Filters by category and opening hours", "Walking minutes across the complex", "Saved favourite places"]
+      },
+      "notify": {
+        "eyebrow": "Notifications",
+        "title": "Be the first to know what's new",
+        "text": "Get notified about new openings and changes at your favourite places. You choose the categories and can turn notifications off at any time.",
+        "ticks": ["New places in your complex", "Hour changes at favourite places", "Flexible settings, no spam"]
+      }
+    }
+  },
+  "screens": {
+    "map": {
+      "name": "Zerno Coffee",
+      "open": "Open until 21:00",
+      "where": "Building 3 · section 2 · street entrance",
+      "tags": ["Coffee", "Pastry"],
+      "walk": "2 min walk",
+      "route": "Route",
+      "call": "Call"
+    },
+    "add": {
+      "step": "Step 2 of 3",
+      "title": "Where can people find you?",
+      "nameLabel": "Name",
+      "nameValue": "Nozhytsi Barbershop",
+      "cats": ["Beauty", "Food", "Service", "Kids"],
+      "building": "Building",
+      "section": "Section",
+      "entrance": "Entrance",
+      "entranceValue": "Courtyard, next to the playground",
+      "photo": "+ Storefront photo",
+      "next": "Next: opening hours"
+    },
+    "fresh": {
+      "title": "Map updates",
+      "today": "Today",
+      "pending": "Awaiting moderation",
+      "items": [
+        { "name": "Bread & Cheese Bakery", "text": "New hours: 7:00–20:00", "badge": "Upd." },
+        { "name": "Lapa Pet Shop", "text": "Temporarily closed until 12.10", "badge": "Status" },
+        { "name": "Lantern Kids Club", "text": "New place · bldg 5, section 3", "badge": "New" }
+      ],
+      "pendingItem": { "name": "Pidbor Shoe Repair", "text": "Moving to bldg 2, section 4", "badge": "2 h" },
+      "approve": "Approve",
+      "reject": "Reject"
+    },
+    "search": {
+      "query": "pharmacy",
+      "chips": ["Open now", "Nearby", "Health"],
+      "count": "3 results",
+      "items": [
+        { "name": "Pharmacy Next Door", "text": "Open 24/7 · bldg 1", "dist": "1 min" },
+        { "name": "Romashka Pharmacy", "text": "Until 22:00 · bldg 6, section 2", "dist": "4 min" },
+        { "name": "Optics & Vision", "text": "Closed · opens at 9:00", "dist": "6 min" }
+      ],
+      "showOnMap": "Show on map"
+    },
+    "notify": {
+      "date": "Saturday, 10 October",
+      "items": [
+        { "title": "mapApp · New nearby", "text": "Bread & Cheese Bakery has opened in bldg 4. First coffee is on the house." },
+        { "title": "mapApp · Favourites", "text": "Nozhytsi Barbershop is now open on Sundays too." }
+      ]
+    }
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "From request to a pin on the map",
+    "text": "Every business is verified, so residents only see real places with the correct address.",
+    "steps": [
+      { "title": "Request", "text": "The owner fills in a form in the app: name, category, location in the complex, hours.", "time": "~3 minutes" },
+      { "title": "Review", "text": "A moderator checks the address and contacts and asks for details if needed.", "time": "within 24 hours" },
+      { "title": "Publishing", "text": "The pin appears on the map and residents get a notification.", "time": "right after approval" },
+      { "title": "Updates", "text": "The owner changes hours or status, and the map stays current.", "time": "any time" }
+    ]
+  },
+  "business": {
+    "title": "Run a business in the complex? Put it on the map",
+    "text": "Residents look for services near home every day. List your place so your neighbours can find you.",
+    "cta": "How to add a business",
+    "items": [
+      { "label": "Listing", "text": "A place card with photos, hours and contacts" },
+      { "label": "Control", "text": "Update your status and hours yourself" },
+      { "label": "Visibility", "text": "Residents are notified when you open" }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "text": "Didn't find an answer? Email us at {email}.",
+    "items": [
+      { "q": "Is mapApp free?", "a": "Yes. Browsing the map, search and notifications are free for residents. Listing a business is free too." },
+      { "q": "Do I need an account?", "a": "You can browse the map without signing up. An account is needed to add or edit a business, save favourites and report mistakes." },
+      { "q": "Who can add a business to the map?", "a": "The owner or a representative of a place that operates in the complex. A moderator reviews every request before publishing." },
+      { "q": "Do you use my location?", "a": "Only if you allow it. Location is used to show you on the map and build a route. Without permission the app works fully except for these features. See the [Privacy Policy](/privacy)." },
+      { "q": "How do I report a mistake on the map?", "a": "Open the place card and tap “Report a mistake”, or contact [support](/support)." },
+      { "q": "How do I delete my account?", "a": "In the app: Profile → Settings → Delete account. You can also send a request without signing in. See [Account deletion](/delete-account)." }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Who is behind mapApp",
+    "p1": "{company} develops mapApp, the digital map of the {complex} residential complex. We help residents quickly find services near home and help local businesses get noticed by their neighbours.",
+    "p2": "Our goal is simple: information about life in the complex should be accurate, gathered in one place and available to every resident."
+  },
+  "footer": {
+    "tagline": "The live map of {complex} complex: businesses, services and routes inside the complex.",
+    "docs": "Documents",
+    "contacts": "Contacts",
+    "support": "Support",
+    "rights": "All rights reserved.",
+    "trademarks": "App Store is a service mark of Apple Inc. Google Play is a trademark of Google LLC."
+  },
+  "legal": {
+    "back": "← Back to home",
+    "navLabel": "Documents",
+    "effective": "Effective: {date}",
+    "updated": "Last updated: {date}",
+    "copy": "Copy",
+    "copied": "Copied",
+    "deleteSubject": "{app} account deletion",
+    "processors": "[cloud hosting, e.g. Google Cloud / Firebase], [push notifications: Firebase Cloud Messaging / Apple Push Notification service], [crash analytics, e.g. Firebase Crashlytics]",
+    "docs": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "blocks": [
+          { "type": "p", "text": "This Policy explains what personal data the **{app}** mobile application (the “App”) and this website collect, why we process it, who we share it with and how you can control your data. It is prepared in line with the Law of Ukraine “On Personal Data Protection”, the EU General Data Protection Regulation (GDPR) where applicable, and App Store and Google Play requirements." },
+          { "type": "note", "text": "**In short.** We collect the minimum data needed for the map to work. We do not sell personal data, do not show personalised ads and do not track you across other companies' apps or websites." },
+          { "type": "h2", "text": "1. Who is responsible for your data" },
+          { "type": "p", "text": "Data controller: {company}, {companyId}, address: {address}. Privacy contact: {email}." },
+          { "type": "h2", "text": "2. Data we collect" },
+          { "type": "h3", "text": "2.1. Data you provide" },
+          { "type": "ul", "items": [
+            "**Account data:** name, email address and/or phone number, password in hashed form. If you sign in with Apple or Google, we receive the identifier and email that service allows.",
+            "**Business data:** place name, category, location in the complex (building, section, entrance), opening hours, contact phone, website or social links, photos. This data is published on the map and visible to all users.",
+            "**Reports:** content reports, map error reports and support requests."
+          ] },
+          { "type": "h3", "text": "2.2. Data collected automatically" },
+          { "type": "ul", "items": [
+            "**Location** (precise or approximate) only with your permission. It is used on the device to show your position on the map and build a route. We do not store your location history.",
+            "**Technical data:** device model, OS and App version, language, push notification token.",
+            "**Diagnostics:** crash and error reports to fix problems in the App.",
+            "**Usage data:** de-identified statistics on screens and features to improve the product."
+          ] },
+          { "type": "h3", "text": "2.3. What we do not collect" },
+          { "type": "p", "text": "We do not collect your address book, photos you have not selected, financial data, health data, biometrics or advertising identifiers (IDFA/AAID) for tracking." },
+          { "type": "h2", "text": "3. Why we use data" },
+          { "type": "table", "head": ["Purpose", "Data", "Legal basis"], "rows": [
+            ["Creating and maintaining your account", "Account data", "Performance of contract (Terms of Use)"],
+            ["Publishing and updating businesses on the map", "Business data", "Performance of contract"],
+            ["Showing your position and routes", "Location", "Your consent (system permission)"],
+            ["Notifications about new places and changes", "Push token, settings", "Your consent"],
+            ["Moderation, security, abuse prevention", "Account data, reports, technical data", "Legitimate interest"],
+            ["Fixing crashes, improving the App", "Diagnostics, de-identified statistics", "Legitimate interest"],
+            ["Answering your requests", "Email, request content", "Contract / legitimate interest"]
+          ] },
+          { "type": "h2", "text": "4. Who we share data with" },
+          { "type": "p", "text": "We do not sell or rent personal data. Data may be shared only with:" },
+          { "type": "ul", "items": [
+            "**Service providers** processing data on our behalf under contract and only for the stated purposes: {processors}.",
+            "**Other users**, for public business data (name, address in the complex, hours, contacts, photos).",
+            "**Public authorities**, where required by law or a properly issued request.",
+            "**A successor** in case of reorganisation or sale of the business, with prior notice to users."
+          ] },
+          { "type": "h2", "text": "5. International transfers" },
+          { "type": "p", "text": "Some providers may store data on servers outside Ukraine. In such cases we use providers that ensure an adequate level of protection, including on the basis of standard contractual clauses." },
+          { "type": "h2", "text": "6. How long we keep data" },
+          { "type": "ul", "items": [
+            "Account data: while the account is active; deleted within 30 days after account deletion.",
+            "Public business data: while the listing is published or until the owner requests deletion.",
+            "Support requests and reports: up to 12 months after closing.",
+            "Diagnostics and technical logs: up to 90 days.",
+            "Data we must keep by law: for the period required by law."
+          ] },
+          { "type": "h2", "text": "7. Your rights" },
+          { "type": "p", "text": "You have the right to know what data we process; get a copy; correct inaccurate data; delete your data and account; restrict or object to processing; withdraw consent (for example, turn off location or notifications in device settings); data portability; and lodge a complaint with the Ukrainian Parliament Commissioner for Human Rights or your local supervisory authority." },
+          { "type": "p", "text": "To exercise your rights, email {email}. We respond within 30 days." },
+          { "type": "h2", "text": "8. Account deletion" },
+          { "type": "p", "text": "You can delete your account in the App (Profile → Settings → Delete account) or send a request without signing in. Details on the [Account and data deletion](/delete-account) page." },
+          { "type": "h2", "text": "9. Children" },
+          { "type": "p", "text": "The App is not intended for persons under {minAge}. We do not knowingly collect children's data. If you believe a child has given us data, contact us and we will delete it." },
+          { "type": "h2", "text": "10. Security" },
+          { "type": "p", "text": "We encrypt data in transit (TLS), store passwords only as hashes, limit staff access to data and review our safeguards regularly. No method of transmission over the internet is completely secure, but we do everything reasonably possible to protect your data." },
+          { "type": "h2", "text": "11. Summary for App Store and Google Play" },
+          { "type": "table", "head": ["Data type", "Collected", "Linked to you", "Tracking"], "rows": [
+            ["Contact info (name, email, phone)", "Yes", "Yes", "No"],
+            ["User content (business data, photos, reports)", "Yes", "Yes", "No"],
+            ["Location", "With permission, on device", "No", "No"],
+            ["Identifiers (account ID, push token)", "Yes", "Yes", "No"],
+            ["Diagnostics (crashes, performance)", "Yes", "No", "No"],
+            ["Usage data", "Yes, de-identified", "No", "No"]
+          ] },
+          { "type": "p", "text": "All data is encrypted in transit. Users can request data deletion." },
+          { "type": "h2", "text": "12. Changes to this Policy" },
+          { "type": "p", "text": "We may update this Policy. We will notify you of material changes in the App or by email at least 14 days before they take effect. The date of the latest version is shown at the top of this page." },
+          { "type": "h2", "text": "13. Contacts" },
+          { "type": "p", "text": "{company}, {address}. Email: {email}." }
+        ]
+      },
+      "terms": {
+        "title": "Terms of Use",
+        "blocks": [
+          { "type": "p", "text": "These Terms govern your use of the **{app}** application and website (together, the “Service”) provided by {company} (“we”). By downloading the App or creating an account you agree to these Terms and the [Privacy Policy](/privacy). If you do not agree, do not use the Service." },
+          { "type": "h2", "text": "1. What the Service is" },
+          { "type": "p", "text": "{app} is an interactive map of the {complex} residential complex where residents find businesses and services and business owners publish and update information about their places." },
+          { "type": "h2", "text": "2. Account" },
+          { "type": "ul", "items": [
+            "Some features require an account. You must be at least {minAge} years old.",
+            "You provide accurate information and are responsible for keeping access to your account secure.",
+            "You can delete your account at any time in the App or by [following these steps](/delete-account)."
+          ] },
+          { "type": "h2", "text": "3. Listing a business" },
+          { "type": "ul", "items": [
+            "Only the owner or an authorised representative of a place that actually operates in the complex may add it.",
+            "You confirm that the information provided (name, address in the complex, hours, contacts, photos) is true and does not infringe third-party rights.",
+            "Every request and change is moderated. We may reject, edit or unpublish a listing that breaks these Terms or the [Content Rules](/content-rules).",
+            "You agree to update the information if your hours, location or status change."
+          ] },
+          { "type": "h2", "text": "4. Your content" },
+          { "type": "p", "text": "You keep the rights to content you upload (texts, photos). By publishing it, you grant us a free, non-exclusive licence to use, reproduce and display it within the Service for as long as it is published." },
+          { "type": "h2", "text": "5. Prohibited" },
+          { "type": "ul", "items": [
+            "posting false, offensive or illegal information or spam;",
+            "impersonating other people or businesses;",
+            "interfering with the Service, bypassing security or scraping data;",
+            "using the Service in breach of the laws of Ukraine."
+          ] },
+          { "type": "p", "text": "Detailed requirements are in the [Content Rules](/content-rules)." },
+          { "type": "h2", "text": "6. Information on the map" },
+          { "type": "p", "text": "We check data before publishing, but business information is provided by the owners. We do not guarantee it is fully accurate and are not responsible for the quality of goods or services. If you spot a mistake, report it in the App." },
+          { "type": "h2", "text": "7. Intellectual property" },
+          { "type": "p", "text": "The App, its design, the complex map, the {app} logo and name belong to us or our licensors. We grant you a limited, non-exclusive, non-transferable licence to use the App for personal, non-commercial purposes." },
+          { "type": "h2", "text": "8. Limitation of liability" },
+          { "type": "p", "text": "The Service is provided “as is”. To the extent permitted by law, we are not liable for indirect damages, loss of data or profit related to the use of the Service. This does not limit your rights under consumer protection law." },
+          { "type": "h2", "text": "9. Suspension and termination" },
+          { "type": "p", "text": "We may restrict or terminate access to an account that breaks these Terms. You may stop using the Service at any time by deleting your account." },
+          { "type": "h2", "text": "10. App store terms" },
+          { "type": "p", "text": "If you downloaded the App from the App Store, these Terms are between you and us, not Apple Inc. Apple is not responsible for the App or its support. Apple's standard Licensed Application End User License Agreement (EULA) also applies. Apple and its subsidiaries are third-party beneficiaries of these Terms. For Google Play, the Google Play Terms of Service apply." },
+          { "type": "h2", "text": "11. Governing law" },
+          { "type": "p", "text": "These Terms are governed by the laws of Ukraine. Disputes are resolved by negotiation, and failing that, in accordance with the laws of Ukraine." },
+          { "type": "h2", "text": "12. Changes to the Terms" },
+          { "type": "p", "text": "We may change these Terms. We will notify you of material changes in the App at least 14 days in advance. By continuing to use the Service you accept the new version." },
+          { "type": "h2", "text": "13. Contacts" },
+          { "type": "p", "text": "{company}, {companyId}, {address}. Email: {email}." }
+        ]
+      },
+      "contentRules": {
+        "title": "Content Rules",
+        "blocks": [
+          { "type": "p", "text": "These rules apply to all content users add to **{app}**: business listings, photos, descriptions, error reports and complaints. They are part of the [Terms of Use](/terms)." },
+          { "type": "h2", "text": "1. What you can publish" },
+          { "type": "ul", "items": [
+            "Real places and services operating in the {complex} complex.",
+            "The exact address in the complex, current hours and contacts.",
+            "Your own photos of the storefront, entrance or interior."
+          ] },
+          { "type": "h2", "text": "2. What is not allowed" },
+          { "type": "ul", "items": [
+            "False or made-up places, wrong addresses.",
+            "Offensive, discriminatory, violent or sexual content.",
+            "Hate speech, threats, harassment, sharing other people's personal data.",
+            "Advertising prohibited goods or services, fraud, spam.",
+            "Content that infringes copyright or trademarks."
+          ] },
+          { "type": "h2", "text": "3. Moderation" },
+          { "type": "p", "text": "Every new listing and every change is reviewed by a moderator before publishing. We also use automatic filtering of profanity." },
+          { "type": "h2", "text": "4. How to report" },
+          { "type": "steps", "items": [
+            "Open the place card on the map.",
+            "Tap “⋯” → “Report” and choose a reason.",
+            "Add a comment if needed and send."
+          ] },
+          { "type": "p", "text": "You can also email {email}. We review reports within 24 hours, remove content that breaks the rules and block the author's account when necessary." },
+          { "type": "h2", "text": "5. Blocking users" },
+          { "type": "p", "text": "You can hide a user's content: open their listing → “⋯” → “Block author”. Their content will no longer be shown to you, and we will be notified to review it." },
+          { "type": "h2", "text": "6. Consequences" },
+          { "type": "p", "text": "Depending on severity: rejection or removal of content, a warning, temporary or permanent account suspension." }
+        ]
+      },
+      "deleteAccount": {
+        "title": "Account and data deletion",
+        "blocks": [
+          { "type": "p", "text": "This page explains how to delete your **{app}** account and associated data. Developer: {company}." },
+          { "type": "h2", "text": "Option 1. In the app" },
+          { "type": "steps", "items": [
+            "Open {app} and sign in.",
+            "Go to “Profile” → “Settings”.",
+            "Tap “Delete account” and confirm."
+          ] },
+          { "type": "p", "text": "The account is deactivated immediately and the data is deleted within 30 days." },
+          { "type": "h2", "text": "Option 2. Without signing in" },
+          { "type": "p", "text": "Send an email from the address or phone linked to your account to:" },
+          { "type": "copy", "value": "{emailPlain}" },
+          { "type": "p", "text": "Subject:" },
+          { "type": "copy", "value": "{deleteSubject}" },
+          { "type": "p", "text": "We confirm receipt within 3 business days and may ask you to confirm the account belongs to you. After confirmation the data is deleted within 30 days." },
+          { "type": "h2", "text": "What is deleted" },
+          { "type": "ul", "items": [
+            "Account data: name, email, phone, password.",
+            "Favourite places, notification settings, push token.",
+            "Your reports and error reports (de-identified).",
+            "Business listings you created are unpublished and deleted unless transferred to another representative of that business."
+          ] },
+          { "type": "h2", "text": "What may be kept" },
+          { "type": "ul", "items": [
+            "Technical logs and crash reports for up to 90 days, not linked to your account.",
+            "Data we are legally required to keep, for the required period.",
+            "Backups are overwritten within 30 days."
+          ] },
+          { "type": "h2", "text": "Deleting some data without deleting the account" },
+          { "type": "p", "text": "You can delete individual photos, a business listing or favourites in the app, or ask us to do it by emailing {email}." }
+        ]
+      },
+      "support": {
+        "title": "Support",
+        "blocks": [
+          { "type": "p", "text": "We are here to help with anything about **{app}**, from signing in to listing a business on the map." },
+          { "type": "h2", "text": "Contact us" },
+          { "type": "copy", "value": "{emailPlain}" },
+          { "type": "p", "text": "We reply within 1 business day. Please include your phone model, the app version (Profile → About) and a short description of the problem." },
+          { "type": "h2", "text": "How to add a business" },
+          { "type": "steps", "items": [
+            "Install {app} and create an account.",
+            "On the map, tap “+ Add business”.",
+            "Fill in the name, category, building, section, entrance and hours. Add a storefront photo.",
+            "Submit for moderation. Review usually takes up to 24 hours."
+          ] },
+          { "type": "h2", "text": "Common issues" },
+          { "type": "h3", "text": "I can't see my position on the map" },
+          { "type": "p", "text": "Make sure the app has location access in your phone settings. Without it the map works, just without your pin." },
+          { "type": "h3", "text": "Notifications don't arrive" },
+          { "type": "p", "text": "Turn on notifications for {app} in your phone settings and in Profile → Notifications." },
+          { "type": "h3", "text": "There is a mistake on the map" },
+          { "type": "p", "text": "Open the place card → “Report a mistake”. We will check and fix it." },
+          { "type": "h3", "text": "I want to delete my account" },
+          { "type": "p", "text": "See the [Account deletion](/delete-account) page." },
+          { "type": "h2", "text": "Documents" },
+          { "type": "ul", "items": [
+            "[Privacy Policy](/privacy)",
+            "[Terms of Use](/terms)",
+            "[Content Rules](/content-rules)"
+          ] },
+          { "type": "h2", "text": "Developer" },
+          { "type": "p", "text": "{company}, {companyId}. {address}." }
+        ]
+      }
+    }
+  }
+}
