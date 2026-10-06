@@ -16,58 +16,6 @@ const ICONS: ReactNode[] = [
   <><path d="M12 2l2.4 2.2 3.2-.4.8 3.1 2.8 1.6-1.2 3 1.2 3-2.8 1.6-.8 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.8-3.1-2.8-1.6 1.2-3-1.2-3 2.8-1.6.8-3.1 3.2.4z" /><path d="M8.5 12l2.5 2.5 4.5-5" /></>,
 ];
 
-async function Dashboard() {
-  const t = await getTranslations("business.dash");
-  const bars = [38, 52, 47, 66, 58, 74, 88, 81];
-  const stats = [
-    { label: t("views"), value: "1 248", delta: "+18%" },
-    { label: t("routes"), value: "312", delta: "+9%" },
-    { label: t("calls"), value: "57", delta: "+4%" },
-  ];
-  return (
-    <div className="relative rounded-[28px] border border-line bg-white p-5 shadow-[0_40px_70px_-40px_rgba(120,40,0,.45)] sm:p-6">
-      <span className="absolute -top-3 right-6 rounded-full bg-ink px-2.5 py-1 font-mono text-[11px] text-white">{t("example")}</span>
-      <div className="flex items-center gap-3">
-        <div className="grid size-11 place-items-center rounded-xl bg-orange">
-          <svg viewBox="0 0 24 24" fill="#fff" className="size-5"><path d="M12 3c-3.6 0-6.4 2.7-6.4 6.2 0 4.6 6.4 10.8 6.4 10.8s6.4-6.2 6.4-10.8C18.4 5.7 15.6 3 12 3z" /></svg>
-        </div>
-        <div className="min-w-0">
-          <b className="flex items-center gap-2 text-[17px]">
-            {t("title")}
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#E3F6EC] px-2 py-0.5 text-[11px] font-semibold text-ok">✓ {t("verified")}</span>
-          </b>
-          <span className="text-[13px] text-ink-3">{t("period")}</span>
-        </div>
-      </div>
-      <div className="mt-5 grid grid-cols-3 gap-2.5">
-        {stats.map((s) => (
-          <div key={s.label} className="rounded-2xl bg-tint p-3">
-            <span className="block text-[11.5px] leading-tight text-ink-2">{s.label}</span>
-            <b className="mt-1 block font-display text-[clamp(18px,2.4vw,24px)] tabular-nums">{s.value}</b>
-            <span className="text-xs font-semibold text-ok">{s.delta}</span>
-          </div>
-        ))}
-      </div>
-      <div className="mt-5">
-        <span className="text-[12.5px] text-ink-3">{t("week")}</span>
-        <div className="mt-2 flex h-28 items-end gap-2 border-b border-line">
-          {bars.map((h, i) => (
-            <div
-              key={i}
-              className={`flex-1 rounded-t-md ${i === bars.length - 2 ? "bg-orange" : "bg-orange-soft"}`}
-              style={{ height: `${h}%` }}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-dashed border-orange-soft px-4 py-3">
-        <span className="text-sm font-semibold">{t("promo")}</span>
-        <span className="rounded-full bg-orange px-2.5 py-1 text-[11px] font-semibold text-white">{t("promoStatus")}</span>
-      </div>
-    </div>
-  );
-}
-
 export default async function ForBusiness() {
   const t = await getTranslations("business");
   const perks = t.raw("perks") as Perk[];
@@ -76,26 +24,23 @@ export default async function ForBusiness() {
     <section id="business" className="pb-16 sm:pb-24">
       <Container>
         <div className="overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,var(--color-orange),#FF8C45_60%,#FFA466)] px-5 py-10 text-white sm:px-10 sm:py-14 md:rounded-[40px] lg:px-14">
-          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:gap-14">
-            <div className="flex min-w-0 flex-col gap-4">
-              <span className="font-mono text-[12.5px] uppercase tracking-[0.12em] text-white/80">{t("eyebrow")}</span>
-              <h2 className="text-[clamp(28px,3.6vw,46px)] font-bold">{t("title")}</h2>
-              <p className="max-w-[34em] text-lg text-white/90">{t("text")}</p>
-              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                {perks.map((p, i) => (
-                  <li key={p.title} className="reveal flex gap-3.5 rounded-[20px] border border-white/25 bg-white/12 p-4 backdrop-blur-sm">
-                    <span className="grid size-10 flex-none place-items-center rounded-xl bg-white text-orange-deep">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden>{ICONS[i % ICONS.length]}</svg>
-                    </span>
-                    <div className="min-w-0">
-                      <b className="block text-[16.5px] leading-snug">{p.title}</b>
-                      <span className="text-[14.5px] leading-snug text-white/85">{p.text}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-ink lg:sticky lg:top-28 lg:mt-10"><Dashboard /></div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <span className="font-mono text-[12.5px] uppercase tracking-[0.12em] text-white/80">{t("eyebrow")}</span>
+            <h2 className="text-[clamp(28px,3.6vw,46px)] font-bold">{t("title")}</h2>
+            <p className="max-w-[34em] text-lg text-white/90">{t("text")}</p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {perks.map((p, i) => (
+                <li key={p.title} className="reveal flex gap-3.5 rounded-[20px] border border-white/25 bg-white/12 p-4 backdrop-blur-sm">
+                  <span className="grid size-10 flex-none place-items-center rounded-xl bg-white text-orange-deep">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5" aria-hidden>{ICONS[i % ICONS.length]}</svg>
+                  </span>
+                  <div className="min-w-0">
+                    <b className="block text-[16.5px] leading-snug">{p.title}</b>
+                    <span className="text-[14.5px] leading-snug text-white/85">{p.text}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="mt-10 flex flex-col gap-5 rounded-[24px] bg-white p-5 text-ink sm:p-7">

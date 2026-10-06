@@ -293,24 +293,12 @@
         "text": "When you appear on the map, residents get a push notification."
       },
       {
-        "title": "Offers for neighbours",
-        "text": "Publish discounts and offers: they appear on your card and in the “New in the complex” feed."
-      },
-      {
         "title": "Route to your door",
         "text": "Customers see the section and entrance, so they don't wander the courtyard or call to ask."
       },
       {
         "title": "Full control",
         "text": "Change hours, photos or the “Temporarily closed” status any time."
-      },
-      {
-        "title": "Statistics",
-        "text": "See how many people opened your card, built a route and called."
-      },
-      {
-        "title": "“Verified” badge",
-        "text": "After moderation your card gets a badge residents trust."
       }
     ],
     "dash": {
@@ -366,7 +354,7 @@
       },
       {
         "q": "How do I report a mistake on the map?",
-        "a": "Open the place card and tap “Report a mistake”, or contact [support](/support)."
+        "a": "Contact [support](/support)."
       },
       {
         "q": "How do I delete my account?",
