@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
-import { LogoMark, LogoText } from "@/components/ui/Logo";
+import { LogoMark } from "@/components/ui/Logo";
+import TypingLogo from "@/components/ui/TypingLogo";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const SECTIONS = ["features", "how", "business", "faq"] as const;
+const SECTIONS = ["features", "business", "complexes", "how", "faq"] as const;
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -40,10 +41,10 @@ export default function Header() {
       <Container className="flex h-[68px] items-center gap-6">
         <Link href="/" aria-label={t("homeAria")} className="flex items-center gap-2.5">
           <LogoMark />
-          <LogoText />
+          <TypingLogo />
         </Link>
 
-        <nav aria-label={t("label")} className="ml-auto hidden items-center gap-7 text-[15px] font-medium lg:flex">
+        <nav aria-label={t("label")} className="ml-auto hidden items-center gap-7 text-[15px] font-medium xl:flex">
           {SECTIONS.map((s) => (
             <Link key={s} href={`/#${s}`} className="text-ink-2 transition-colors hover:text-orange-deep">
               {t(s)}
@@ -51,7 +52,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-3 lg:ml-0">
+        <div className="ml-auto flex items-center gap-3 xl:ml-0">
           <LanguageSwitcher className="hidden sm:inline-flex" />
           <Link
             href="/#download"
@@ -65,7 +66,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? t("closeMenu") : t("openMenu")}
-            className="grid size-11 place-items-center rounded-full bg-tint lg:hidden"
+            className="grid size-11 place-items-center rounded-full bg-tint xl:hidden"
           >
             <span className="relative block h-3.5 w-5">
               <span className={`absolute left-0 h-0.5 w-5 rounded bg-ink transition-all ${open ? "top-1.5 rotate-45" : "top-0"}`} />
@@ -80,7 +81,7 @@ export default function Header() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="fixed inset-x-0 top-[calc(68px+env(safe-area-inset-top,0px))] bottom-0 z-40 overflow-y-auto border-t border-line bg-white lg:hidden"
+        className="fixed inset-x-0 top-[calc(68px+env(safe-area-inset-top,0px))] bottom-0 z-40 overflow-y-auto border-t border-line bg-white xl:hidden"
       >
         <Container className="flex flex-col gap-2 py-6">
           {SECTIONS.map((s) => (

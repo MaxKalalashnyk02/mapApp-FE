@@ -8,10 +8,10 @@ export function LogoMark({ className = "size-[30px]" }: { className?: string }) 
   );
 }
 
-export function LogoText() {
+export function LogoText({ full = false }: { full?: boolean }) {
   return (
     <span className="font-display text-xl font-extrabold tracking-[-0.03em]">
-      map<b className="text-orange">App</b>
+      {full ? "Quarter" : "Q"}<b className="text-orange">Map</b>
     </span>
   );
 }

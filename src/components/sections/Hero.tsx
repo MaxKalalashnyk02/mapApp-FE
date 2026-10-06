@@ -7,7 +7,6 @@ type Fact = { value: string; label: string };
 
 export default async function Hero() {
   const t = await getTranslations("hero");
-  const tb = await getTranslations("brand");
   const facts = t.raw("facts") as Fact[];
   const stagger = ["", "[animation-delay:80ms]", "[animation-delay:160ms]", "[animation-delay:240ms]", "[animation-delay:320ms]"];
 
@@ -22,7 +21,7 @@ export default async function Hero() {
             <i className="grid size-[22px] place-items-center rounded-full bg-orange">
               <i className="size-2 animate-blink rounded-full bg-white" />
             </i>
-            {t("chip", { complex: tb("complex") })}
+            {t("chip")}
           </span>
 
           <h1 className={`animate-rise-in text-[clamp(32px,4.4vw,58px)] font-extrabold ${stagger[1]}`}>

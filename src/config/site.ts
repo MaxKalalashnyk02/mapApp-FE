@@ -1,6 +1,7 @@
 export const site = {
-  app: "mapApp",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mapapp.example.com",
+  app: "QMap",
+  appFull: "QuarterMap",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qmap.example.com",
   company: "[Назва компанії або ФОП]",
   companyId: "[ЄДРПОУ / РНОКПП]",
   address: "[Юридична адреса, Київ, Україна]",

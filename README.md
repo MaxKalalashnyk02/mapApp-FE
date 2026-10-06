@@ -1,6 +1,8 @@
-# mapApp: промо-лендінг
+# QMap: промо-лендінг
 
 Next.js 16 (App Router) + Tailwind CSS v4 + next-intl. Мови: українська (`/`) і англійська (`/en`).
+
+Лендінг універсальний для багатьох ЖК. Зараз підключені ЖК «Варшавський» (перший запуск) і ЖК «Діброва».
 
 ## Запуск
 
@@ -60,13 +62,29 @@ src/app/[locale]/      головна, [doc]: privacy | terms | content-rules | 
 src/app/sitemap.ts     sitemap.xml для обох мов
 src/components/
   layout/              Header (мобільне меню), Footer, LanguageSwitcher
-  sections/            Hero, IsoMap (3D-карта), Marquee, Problem, Features, HowItWorks, BusinessCta, Faq, About
+  sections/            Hero, IsoMap (3D-карта з перемикачем ЖК), Marquee, Problem, Features,
+                       ForBusiness (переваги для бізнесу), Complexes (ЖК і заявка), HowItWorks, Faq, About
   phones/              макети екранів застосунку
   legal/               рендер документів, кнопка копіювання
-src/config/            site.ts (дані компанії), legal.ts (список документів)
+src/config/            site.ts (дані компанії), complexes.ts (ЖК і планування), legal.ts (список документів)
 src/i18n/              routing, navigation, request
 src/proxy.ts           визначення мови (Next 16: proxy замість middleware)
 ```
+
+## Житлові комплекси
+
+Список ЖК задається в `src/config/complexes.ts`. Звідти беруться перемикач на 3D-карті в hero і картки в секції «Де працює QMap».
+
+Щоб додати новий ЖК:
+1. Додайте запис у `COMPLEXES`: `{ id: "nazva", layout: "a" | "b", badge: "new" }`. Можна намалювати й нове планування в `LAYOUTS`: будинки задаються як `[x, y, ширина, глибина, висота, чи є бізнес]` на площині 440×440.
+2. У кожному `messages/*.json` додайте `complexes.items.<id>` з полями `name`, `text` і `pins` (5 демо-закладів для анімації).
+3. Перевірте переклади: `npm run i18n:check`.
+
+## Іконки
+
+`src/app/favicon.ico` (16/32/48), `src/app/icon.svg`, `src/app/apple-icon.png` (180×180) і `src/app/manifest.ts`
+з іконками 192/512 та maskable 512 у `public/`. Next.js сам додає потрібні `<link>` у `<head>`.
+Вихідні SVG для перегенерації: `src/app/icon.svg` (з заокругленням) і `design/icon-square.svg` (на весь квадрат).
 
 ## Деплой
 

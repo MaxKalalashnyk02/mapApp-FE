@@ -1,17 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useTranslations } from "next-intl";
+import { COMPLEXES, LAYOUTS, type ComplexId } from "@/config/complexes";
 
 type Pin = { name: string; where: string; status: string };
-const BUILDINGS: [number, number, number, number, number, boolean?][] = [
-  [30, 30, 70, 150, 96], [110, 30, 120, 60, 72], [110, 110, 60, 70, 50],
-  [300, 30, 110, 60, 118, true], [300, 110, 50, 70, 66], [365, 110, 45, 70, 84],
-  [30, 255, 90, 60, 80, true], [30, 330, 60, 80, 58], [140, 255, 90, 150, 128],
-  [300, 255, 110, 55, 72], [300, 325, 60, 85, 104, true], [370, 325, 40, 85, 50],
-];
-const PIN_BUILDINGS = [3, 6, 10, 0, 8];
-const TREES = [[8, 10], [34, 18], [14, 40], [40, 48]];
 
 const PinIcon = () => (
   <svg viewBox="0 0 30 40" aria-hidden="true">
@@ -20,20 +13,35 @@ const PinIcon = () => (
   </svg>
 );
 
+function trees(w: number, h: number) {
+  const cols = Math.max(2, Math.round(w / 28)), rows = Math.max(2, Math.round(h / 28));
+  const out: [number, number][] = [];
+  for (let r = 0; r < rows; r++)
+    for (let c = 0; c < cols; c++)
+      out.push([((c + 0.5) * w) / cols - 7 + (r % 2 ? 5 : -3), ((r + 0.5) * h) / rows - 7]);
+  return out;
+}
+
 export default function IsoMap() {
   const t = useTranslations("map");
-  const pins = t.raw("pins") as Pin[];
+  const tc = useTranslations("complexes");
+  const [complex, setComplex] = useState<ComplexId>(COMPLEXES[0].id);
+  const cfg = COMPLEXES.find((c) => c.id === complex)!;
+  const layout = LAYOUTS[cfg.layout];
+  const pins = tc.raw(`items.${complex}.pins`) as Pin[];
+
   const stageRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(-1);
   const [toast, setToast] = useState(0);
   const [swap, setSwap] = useState(false);
+  const parkTrees = useMemo(() => trees(layout.park.w, layout.park.h), [layout]);
 
   useEffect(() => {
     const stage = stageRef.current, scene = sceneRef.current;
     if (!stage || !scene) return;
     const fit = () => {
-      const s = Math.min(1.12, stage.clientWidth / 640, stage.clientHeight / 520);
+      const s = Math.min(1.12, stage.clientWidth / 640, (stage.clientHeight - 56) / 500);
       scene.style.setProperty("--s", s.toFixed(3));
     };
     fit();
@@ -44,21 +52,22 @@ export default function IsoMap() {
 
   useEffect(() => {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setActive(-1);
     let i = 0;
     let iv: number | undefined;
     const to = window.setTimeout(() => {
       setActive(0);
       if (!reduce) iv = window.setInterval(() => { i = (i + 1) % pins.length; setActive(i); }, 3200);
-    }, reduce ? 0 : 2100);
+    }, reduce ? 0 : 1900);
     return () => { clearTimeout(to); if (iv) clearInterval(iv); };
-  }, [pins.length]);
+  }, [complex, pins.length]);
 
   useEffect(() => {
     if (active < 0) return;
     setSwap(true);
     const tm = window.setTimeout(() => { setToast(active); setSwap(false); }, 280);
     return () => clearTimeout(tm);
-  }, [active]);
+  }, [active, complex]);
 
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -89,59 +98,90 @@ export default function IsoMap() {
     };
   }, []);
 
-  const p = pins[toast];
+  const p = pins[Math.min(toast, pins.length - 1)];
 
   return (
-    <div ref={stageRef} role="img" aria-label={t("aria")} className="relative h-[360px] min-w-0 sm:h-[460px] lg:h-[560px]">
-      <div ref={sceneRef} className="iso-scene">
-        <div className="iso-plane">
-          <div className="iso-road h" />
-          <div className="iso-road v" />
-          <svg className="iso-route" viewBox="0 0 440 440" aria-hidden="true"><path d="M60 218 H272 V300 H330" /></svg>
-          <div className="iso-park">
-            {TREES.map(([l, tp]) => <i key={`${l}-${tp}`} className="iso-tree" style={{ left: l, top: tp }} />)}
-          </div>
-          {BUILDINGS.map(([x, y, w, d, h, biz], i) => (
-            <div
-              key={i}
-              className={`iso-b${biz ? " biz" : ""}`}
-              style={{ left: x, top: y, width: w, height: d, "--h": `${h}px`, "--i": i } as CSSProperties}
+    <div className="flex min-w-0 flex-col gap-3">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 [scrollbar-width:none]" role="tablist" aria-label={tc("choose")}>
+        <span className="hidden flex-none font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3 2xl:inline">{tc("choose")}</span>
+        {COMPLEXES.map((c) => {
+          const on = c.id === complex;
+          return (
+            <button
+              key={c.id}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              onClick={() => setComplex(c.id)}
+              className={`flex flex-none items-center gap-2 rounded-full border py-2 pr-3.5 pl-2.5 text-sm font-semibold whitespace-nowrap transition ${
+                on ? "border-orange bg-orange text-white shadow-[0_10px_24px_-12px_rgba(255,107,26,.8)]" : "border-line bg-white text-ink hover:border-orange-soft"
+              }`}
             >
-              <i className="s" /><i className="w" /><i className="t" />
-            </div>
-          ))}
-          {pins.map((pin, i) => {
-            const [x, y, w, d, h] = BUILDINGS[PIN_BUILDINGS[i % PIN_BUILDINGS.length]];
-            return (
-              <div
-                key={i}
-                className={`iso-anchor${active === i ? " on" : ""}`}
-                style={{ left: x + w / 2, top: y + d / 2, "--h": `${h + 2}px`, "--i": i } as CSSProperties}
-              >
-                <i className="iso-ring" />
-                <div className="iso-face">
-                  <div className="iso-pin"><PinIcon /></div>
-                  <div className="iso-tag">{pin.name}<em>● {pin.status}</em></div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              <span className={`size-2 rounded-full ${on ? "bg-white" : "bg-ok"}`} />
+              {tc(`items.${c.id}.name`)}
+              <span className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${on ? "bg-white/25" : "bg-tint text-orange-deep"}`}>
+                {tc(c.badge)}
+              </span>
+            </button>
+          );
+        })}
+        <a href="#complexes" className="flex-none rounded-full border border-dashed border-orange-soft px-3.5 py-2 text-sm font-semibold whitespace-nowrap text-orange-deep hover:bg-tint">
+          {tc("yours")}
+        </a>
       </div>
 
-      <div
-        aria-live="polite"
-        className="absolute right-0 bottom-0 z-[3] flex max-w-[260px] animate-rise-in items-center gap-3 rounded-[18px] border border-line bg-white p-2.5 pr-3 shadow-[0_24px_40px_-20px_rgba(120,40,0,.35)] [animation-delay:1.8s] sm:right-[2%] sm:bottom-[16%] lg:bottom-[4%] sm:max-w-[290px] sm:p-3 sm:pr-4"
-      >
-        <div className="grid size-10 flex-none place-items-center rounded-xl bg-orange">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" className="size-[22px]"><path d="M12 5v14M5 12h14" /></svg>
+      <div ref={stageRef} role="img" aria-label={`${t("aria")}: ${tc(`items.${complex}.name`)}`} className="relative h-[340px] sm:h-[440px] lg:h-[520px]">
+        <div ref={sceneRef} className="iso-scene">
+          <div key={complex} className="iso-plane">
+            {layout.roads.map((r, i) => (
+              <div key={i} className={`iso-road ${r.dir}`} style={{ left: r.x, top: r.y, width: r.w, height: r.h }} />
+            ))}
+            <svg className="iso-route" viewBox="0 0 440 440" aria-hidden="true"><path d={layout.route} /></svg>
+            <div className="iso-park" style={{ left: layout.park.x, top: layout.park.y, width: layout.park.w, height: layout.park.h }}>
+              {parkTrees.map(([l, tp], i) => <i key={i} className="iso-tree" style={{ left: l, top: tp }} />)}
+            </div>
+            {layout.buildings.map(([x, y, w, d, h, biz], i) => (
+              <div
+                key={i}
+                className={`iso-b${biz ? " biz" : ""}`}
+                style={{ left: x, top: y, width: w, height: d, "--h": `${h}px`, "--i": i } as CSSProperties}
+              >
+                <i className="s" /><i className="w" /><i className="t" />
+              </div>
+            ))}
+            {pins.map((pin, i) => {
+              const [x, y, w, d, h] = layout.buildings[layout.pinBuildings[i % layout.pinBuildings.length]];
+              return (
+                <div
+                  key={i}
+                  className={`iso-anchor${active === i ? " on" : ""}`}
+                  style={{ left: x + w / 2, top: y + d / 2, "--h": `${h + 2}px`, "--i": i } as CSSProperties}
+                >
+                  <i className="iso-ring" />
+                  <div className="iso-face">
+                    <div className="iso-pin"><PinIcon /></div>
+                    <div className="iso-tag">{pin.name}<em>● {pin.status}</em></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className={`min-w-0 transition duration-300 ${swap ? "translate-y-1.5 opacity-0" : ""}`}>
-          <small className="block font-mono text-[11px] font-medium uppercase tracking-[0.06em] text-orange-deep">
-            {toast % 2 ? t("updated") : t("justAdded")}
-          </small>
-          <b className="block text-[15px] leading-snug">{p.name}</b>
-          <span className="text-[13px] leading-snug text-ink-3">{p.where}</span>
+
+        <div
+          aria-live="polite"
+          className="absolute right-0 bottom-0 z-[3] flex max-w-[260px] animate-rise-in items-center gap-3 rounded-[18px] border border-line bg-white p-2.5 pr-3 shadow-[0_24px_40px_-20px_rgba(120,40,0,.35)] [animation-delay:1.8s] sm:right-[2%] sm:bottom-[10%] sm:max-w-[290px] sm:p-3 sm:pr-4 lg:bottom-[2%]"
+        >
+          <div className="grid size-10 flex-none place-items-center rounded-xl bg-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" className="size-[22px]"><path d="M12 5v14M5 12h14" /></svg>
+          </div>
+          <div className={`min-w-0 transition duration-300 ${swap ? "translate-y-1.5 opacity-0" : ""}`}>
+            <small className="block font-mono text-[11px] font-medium uppercase tracking-[0.06em] text-orange-deep">
+              {toast % 2 ? t("updated") : t("justAdded")}
+            </small>
+            <b className="block text-[15px] leading-snug">{p.name}</b>
+            <span className="text-[13px] leading-snug text-ink-3">{p.where}</span>
+          </div>
         </div>
       </div>
     </div>

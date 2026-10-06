@@ -104,15 +104,13 @@
 }
 .iso-plane * { transform-style: preserve-3d; }
 .iso-road { position: absolute; background: var(--color-tint-2); }
-.iso-road.h { left: 0; right: 0; top: 200px; height: 36px; }
-.iso-road.v { top: 0; bottom: 0; left: 256px; width: 32px; }
 .iso-road::after { content: ""; position: absolute; }
-.iso-road.h::after { left: 0; right: 0; top: 17px; height: 2px; background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 26px); }
-.iso-road.v::after { top: 0; bottom: 0; left: 15px; width: 2px; background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 26px); }
+.iso-road.h::after { left: 0; right: 0; top: calc(50% - 1px); height: 2px; background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 26px); }
+.iso-road.v::after { top: 0; bottom: 0; left: calc(50% - 1px); width: 2px; background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 26px); }
 .iso-route { position: absolute; inset: 0; pointer-events: none; }
 .iso-route path { fill: none; stroke: var(--color-orange); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 8 9; animation: iso-march 1.2s linear infinite; }
 @keyframes iso-march { to { stroke-dashoffset: -34; } }
-.iso-park { position: absolute; left: 180px; top: 110px; width: 62px; height: 72px; border-radius: 14px; background: #ffe9da; }
+.iso-park { position: absolute; border-radius: 14px; background: #ffe9da; }
 .iso-tree { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--color-orange-soft); transform: translateZ(10px); box-shadow: 0 0 0 3px #fff inset; }
 
 .iso-b { position: absolute; animation: iso-rise 1s cubic-bezier(0.2, 0.9, 0.25, 1.15) backwards; animation-delay: calc(0.25s + var(--i) * 70ms); }

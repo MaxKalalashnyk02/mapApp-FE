@@ -24,7 +24,7 @@ export default async function Footer() {
               <LogoMark />
               <LogoText />
             </Link>
-            <p className="max-w-[30em] text-[15px] text-ink-2">{t("tagline", { complex: vars.complex })}</p>
+            <p className="max-w-[30em] text-[15px] text-ink-2">{t("tagline")}</p>
             <StoreBadges />
           </div>
           <div>

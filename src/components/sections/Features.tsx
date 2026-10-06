@@ -6,27 +6,43 @@ import SectionHead from "@/components/ui/SectionHead";
 import { PhoneScreenshot } from "@/components/phones/Phone";
 import AddFormDemo from "@/components/phones/AddFormDemo";
 import MapZoomDemo from "@/components/phones/MapZoomDemo";
+import SearchDemo from "@/components/phones/SearchDemo";
+import NotifyDemo from "@/components/phones/NotifyDemo";
 
 const ITEMS = [
   {
     key: "map",
     screen: (
-      <PhoneScreenshot src="/screens/map-light.png" alt="mapApp" width={424} height={865}>
-        <MapZoomDemo src="/screens/map-zoom-layer.png" />
+      <PhoneScreenshot src="/screens/map-qmap.png" alt="QMap" width={424} height={865}>
+        <MapZoomDemo src="/screens/map-qmap-layer.png" mask="/screens/map-qmap-mask.png" />
       </PhoneScreenshot>
     ),
   },
   {
     key: "add",
     screen: (
-      <PhoneScreenshot src="/screens/add-phone.png" alt="mapApp" width={424} height={865}>
+      <PhoneScreenshot src="/screens/add-phone.png" alt="QMap" width={424} height={865}>
         <AddFormDemo />
       </PhoneScreenshot>
     ),
   },
   // { key: "fresh", screen: <FreshScreen /> },
-  { key: "search", screen: <PhoneScreenshot src="/screens/search-phone.png" alt="mapApp" width={424} height={865} /> },
-  { key: "notify", screen: <PhoneScreenshot src="/screens/news-phone.png" alt="mapApp" width={424} height={865} /> },
+  {
+    key: "search",
+    screen: (
+      <PhoneScreenshot src="/screens/search-phone.png" alt="QMap" width={424} height={865}>
+        <SearchDemo src="/screens/search-phone.png" />
+      </PhoneScreenshot>
+    ),
+  },
+  {
+    key: "notify",
+    screen: (
+      <PhoneScreenshot src="/screens/news-qmap.png" alt="QMap" width={424} height={865}>
+        <NotifyDemo />
+      </PhoneScreenshot>
+    ),
+  },
 ] as const satisfies readonly { key: string; screen: ReactNode }[];
 
 export default async function Features() {

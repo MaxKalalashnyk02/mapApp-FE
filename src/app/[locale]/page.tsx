@@ -6,7 +6,8 @@ import Marquee from "@/components/sections/Marquee";
 import Problem from "@/components/sections/Problem";
 import Features from "@/components/sections/Features";
 import HowItWorks from "@/components/sections/HowItWorks";
-import BusinessCta from "@/components/sections/BusinessCta";
+import ForBusiness from "@/components/sections/ForBusiness";
+import Complexes from "@/components/sections/Complexes";
 import Faq from "@/components/sections/Faq";
 import About from "@/components/sections/About";
 
@@ -19,8 +20,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Marquee />
       <Problem />
       <Features />
+      <ForBusiness />
+      <Complexes />
       <HowItWorks />
-      <BusinessCta />
       <Faq />
       <About />
     </main>

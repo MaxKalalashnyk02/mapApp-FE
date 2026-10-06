@@ -7,7 +7,6 @@ export async function getSiteVars(locale: Locale): Promise<Vars> {
   const t = await getTranslations({ locale });
   return {
     app: site.app,
-    complex: t("brand.complex"),
     company: site.company,
     companyId: site.companyId,
     address: site.address,
