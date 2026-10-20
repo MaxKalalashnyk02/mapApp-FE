@@ -5,6 +5,7 @@ export const site = {
   company: "[Назва компанії або ФОП]",
   companyId: "[ЄДРПОУ / РНОКПП]",
   address: "[Юридична адреса, Київ, Україна]",
+  email: "[support@ваш-домен.ua]",
   mapProvider: "[Mapbox / Google Maps / OpenStreetMap]",
   iosUrl: "https://apps.apple.com/",
   androidUrl: "https://play.google.com/store/apps",
