@@ -119,9 +119,6 @@ export default function IsoMap() {
             >
               <span className={`size-2 rounded-full ${on ? "bg-white" : "bg-ok"}`} />
               {tc(`items.${c.id}.name`)}
-              <span className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${on ? "bg-white/25" : "bg-tint text-orange-deep"}`}>
-                {tc(`items.${c.id}.badge`)}
-              </span>
             </button>
           );
         })}

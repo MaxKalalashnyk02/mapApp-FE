@@ -1,36 +1,28 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import FormModal, { fieldCls, labelCls } from "@/components/ui/FormModal";
+import AddressField from "@/components/ui/AddressField";
 
-const ROLES = ["osbb", "management", "developer", "resident", "other"] as const;
+const CTA_CLS =
+  "mt-auto inline-flex self-start rounded-full bg-orange px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-deep";
 
-export default function ComplexRequestModal() {
+export default function ComplexRequestModal({ trigger, triggerClassName = CTA_CLS }: { trigger?: ReactNode; triggerClassName?: string }) {
   const t = useTranslations("complexes.request.form");
   const tr = useTranslations("complexes.request");
   return (
     <FormModal
       endpoint="/api/complex-request"
       ns="complexes.request.form"
-      trigger={tr("cta")}
-      triggerClassName="mt-auto inline-flex self-start rounded-full bg-orange px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-deep"
+      trigger={trigger ?? tr("cta")}
+      triggerClassName={triggerClassName}
     >
       <label className={labelCls}>
         {t("complex")} *
         <input name="complex" required maxLength={120} placeholder={t("complexPh")} className={fieldCls} />
       </label>
-      <label className={labelCls}>
-        {t("address")} *
-        <input name="address" required maxLength={200} placeholder={t("addressPh")} className={fieldCls} />
-      </label>
-      <label className={labelCls}>
-        {t("role")}
-        <select name="role" defaultValue="resident" className={fieldCls}>
-          {ROLES.map((r) => (
-            <option key={r} value={r}>{t(`roles.${r}`)}</option>
-          ))}
-        </select>
-      </label>
+      <AddressField />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className={labelCls}>
           {t("name")} *
@@ -38,7 +30,16 @@ export default function ComplexRequestModal() {
         </label>
         <label className={labelCls}>
           {t("contact")} *
-          <input name="contact" required maxLength={120} placeholder={t("contactPh")} className={fieldCls} />
+          <input
+            name="contact"
+            required
+            maxLength={64}
+            autoComplete="tel"
+            pattern="(\+?[0-9\s\-\(\)]{10,20})|((https?://)?(t\.me/)?@?[A-Za-z0-9_]{5,32})"
+            title={t("contactPh")}
+            placeholder={t("contactPh")}
+            className={fieldCls}
+          />
         </label>
       </div>
       <label className={labelCls}>

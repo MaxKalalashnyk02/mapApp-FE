@@ -1308,19 +1308,11 @@
         "complexPh": "For example, Varshavskyi",
         "address": "Address",
         "addressPh": "City, street, building number",
-        "role": "Who you are",
-        "roles": {
-          "osbb": "Homeowners' association",
-          "management": "Management company",
-          "developer": "Developer",
-          "resident": "Resident / group of residents",
-          "other": "Other"
-        },
         "name": "Your name",
-        "contact": "Phone, Telegram or email",
+        "contact": "Phone or Telegram",
         "contactPh": "+380… or @username",
         "comment": "Comment",
-        "commentPh": "How many buildings, are there businesses, anything important",
+        "commentPh": "What kind of business do you have?",
         "submit": "Send request",
         "sending": "Sending…",
         "error": "We couldn't send your request. Please try again a little later.",
@@ -1338,5 +1330,14 @@
     "text": "We only use necessary cookies to remember the site language. No ads, no tracking.",
     "more": "Learn more",
     "ok": "Got it"
+  },
+  "addressPicker": {
+    "label": "Address",
+    "placeholder": "Street, building number",
+    "openMap": "Choose on the map",
+    "hint": "Move the map so the pin points at your complex",
+    "finding": "Finding the address…",
+    "done": "Done",
+    "clear": "Clear address"
   }
 }

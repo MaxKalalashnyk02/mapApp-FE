@@ -11,11 +11,18 @@ export type Lead = {
   role?: string;
   business?: string;
   message?: string;
+  latitude?: number;
+  longitude?: number;
   locale: "uk" | "en";
 };
 
 export const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 export const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
+
+export function coord(v: unknown, limit: number) {
+  const n = typeof v === "string" ? Number(v) : typeof v === "number" ? v : NaN;
+  return Number.isFinite(n) && Math.abs(n) <= limit ? Math.round(n * 1e6) / 1e6 : undefined;
+}
 
 export async function readForm(req: Request): Promise<Record<string, unknown> | null> {
   try {

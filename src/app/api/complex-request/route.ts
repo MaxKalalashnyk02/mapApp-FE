@@ -1,15 +1,5 @@
 import { NextResponse } from "next/server";
-import { deliverLead, esc, rateLimited, readForm, str } from "@/lib/leads";
-
-const ROLES = ["osbb", "management", "developer", "resident", "other"] as const;
-type Role = (typeof ROLES)[number];
-const ROLE_LABEL: Record<Role, string> = {
-  osbb: "ОСББ",
-  management: "Керуюча компанія",
-  developer: "Забудовник",
-  resident: "Мешканець / ініціативна група",
-  other: "Інше",
-};
+import { coord, deliverLead, esc, rateLimited, readForm, str } from "@/lib/leads";
 
 export async function POST(req: Request) {
   const body = await readForm(req);
@@ -21,9 +11,16 @@ export async function POST(req: Request) {
   const name = str(body.name, 80);
   const contact = str(body.contact, 120);
   const comment = str(body.comment, 2000);
-  const role: Role = ROLES.includes(body.role as Role) ? (body.role as Role) : "other";
   const locale = body.locale === "en" ? "en" : "uk";
-  if (!complex || !address || !name || !contact) return NextResponse.json({ ok: false }, { status: 400 });
+  const latitude = coord(body.latitude, 90);
+  const longitude = coord(body.longitude, 180);
+  const hasPoint = latitude !== undefined && longitude !== undefined;
+  const digits = contact.replace(/\D/g, "");
+  const isPhone = /^\+?[0-9\s\-()]+$/.test(contact) && digits.length >= 10 && digits.length <= 15;
+  const username = contact.replace(/^(https?:\/\/)?t\.me\//i, "").replace(/^@/, "");
+  const isTelegram = !isPhone && /^[A-Za-z0-9_]{5,32}$/.test(username);
+  if (!complex || !address || !name || (!isPhone && !isTelegram))
+    return NextResponse.json({ ok: false }, { status: 400 });
   if (rateLimited(req)) return NextResponse.json({ ok: false }, { status: 429 });
 
   const text = [
@@ -31,13 +28,26 @@ export async function POST(req: Request) {
     "",
     `<b>ЖК:</b> ${esc(complex)}`,
     `<b>Адреса:</b> ${esc(address)}`,
-    `<b>Хто:</b> ${ROLE_LABEL[role]}`,
+    ...(hasPoint ? [`<b>Мапа:</b> <a href="https://www.google.com/maps?q=${latitude},${longitude}">${latitude}, ${longitude}</a>`] : []),
     `<b>Ім'я:</b> ${esc(name)}`,
-    `<b>Контакт:</b> ${esc(contact)}`,
+    isTelegram
+      ? `<b>Telegram:</b> <a href="https://t.me/${username}">@${username}</a>`
+      : `<b>Телефон:</b> ${esc(contact)}`,
     ...(comment ? [`<b>Коментар:</b> ${esc(comment)}`] : []),
-    "",
-    `<i>Мова сайту: ${locale}</i>`,
   ].join("\n");
 
-  return deliverLead(req, { type: "complex", name, contact, complex, address, role, message: comment, locale }, text);
+  return deliverLead(
+    req,
+    {
+      type: "complex",
+      name,
+      contact: isTelegram ? `@${username}` : contact,
+      complex,
+      address,
+      message: comment,
+      locale,
+      ...(hasPoint ? { latitude, longitude } : {}),
+    },
+    text,
+  );
 }

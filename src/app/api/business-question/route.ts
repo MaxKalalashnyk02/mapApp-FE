@@ -23,8 +23,6 @@ export async function POST(req: Request) {
     `<b>Контакт:</b> ${esc(contact)}`,
     "",
     esc(question),
-    "",
-    `<i>Мова сайту: ${locale}</i>`,
   ].join("\n");
 
   return deliverLead(

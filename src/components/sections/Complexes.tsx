@@ -40,7 +40,6 @@ export default async function Complexes() {
                 <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-ok shadow-sm">
                   <i className="size-2 animate-blink rounded-full bg-ok" />{t("live")}
                 </span>
-                <span className="absolute top-4 right-4 rounded-full bg-orange px-2.5 py-1 text-xs font-semibold text-white">{t(`items.${c.id}.badge`)}</span>
               </div>
               <div className="flex flex-1 flex-col gap-2 p-6">
                 <h3 className="text-xl font-bold">{t(`items.${c.id}.name`)}</h3>

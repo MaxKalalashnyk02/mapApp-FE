@@ -105,7 +105,6 @@ function Form({
       >
         {status === "sending" ? t("sending") : t("submit")}
       </button>
-      <p className="text-xs text-ink-3">{t("note")}</p>
     </form>
   );
 }
