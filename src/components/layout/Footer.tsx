@@ -7,7 +7,7 @@ import { LEGAL_DOCS, type LegalSlug } from "@/config/legal";
 import { rich } from "@/lib/rich";
 import { getSiteVars } from "@/lib/vars";
 
-const DOC_LINKS: LegalSlug[] = ["privacy", "terms", "content-rules", "delete-account"];
+const DOC_LINKS: LegalSlug[] = ["privacy", "terms", "content-rules", "delete-account", "cookies"];
 
 export default async function Footer() {
   const locale = await getLocale();
@@ -44,7 +44,6 @@ export default async function Footer() {
             <ul className="grid gap-2.5">
               <li><Link href="/support" className="font-medium hover:text-orange-deep">{t("support")}</Link></li>
               <li className="font-medium">{rich("{email}", vars)}</li>
-              <li className="text-[15px] text-ink-2">{rich("{address}", vars)}</li>
             </ul>
           </div>
         </div>

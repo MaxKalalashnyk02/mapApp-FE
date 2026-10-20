@@ -1,13 +1,13 @@
 export const site = {
   app: "QMap",
   appFull: "QuarterMap",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qmap.example.com",
+  url: process.env.SITE_URL ?? "https://qmap.example.com",
   company: "[Назва компанії або ФОП]",
   companyId: "[ЄДРПОУ / РНОКПП]",
   address: "[Юридична адреса, Київ, Україна]",
-  email: "[support@ваш-домен.ua]",
-  iosUrl: "",
-  androidUrl: "",
+  mapProvider: "[Mapbox / Google Maps / OpenStreetMap]",
+  iosUrl: "https://apps.apple.com/",
+  androidUrl: "https://play.google.com/store/apps",
   effectiveDate: "2026-10-05",
   minAge: 16,
 } as const;

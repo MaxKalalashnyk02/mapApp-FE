@@ -22,7 +22,7 @@ Node.js 20.9 або новіший.
 
 | Поле | Що це |
 |---|---|
-| `url` | Домен сайту (або змінна `NEXT_PUBLIC_SITE_URL`) |
+| `url` | Домен сайту (або змінна `SITE_URL`) |
 | `company`, `companyId`, `address` | ФОП / ТОВ, ЄДРПОУ або РНОКПП, юридична адреса |
 | `email` | Email підтримки |
 | `iosUrl`, `androidUrl` | Посилання на сторінки в сторах. Поки пусті, кнопки показують «Незабаром» |
@@ -88,4 +88,4 @@ src/proxy.ts           визначення мови (Next 16: proxy заміс�
 
 ## Деплой
 
-Vercel: імпортуйте репозиторій, змінну `NEXT_PUBLIC_SITE_URL` встановіть на свій домен. Шрифти (Unbounded, Onest, JetBrains Mono) лежать у самому проєкті через `@fontsource`, тож Google Fonts не потрібні.
+Vercel: імпортуйте репозиторій, змінну `SITE_URL` встановіть на свій домен. Шрифти (Unbounded, Onest, JetBrains Mono) лежать у самому проєкті через `@fontsource`, тож Google Fonts не потрібні.

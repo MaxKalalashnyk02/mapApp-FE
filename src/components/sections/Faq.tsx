@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
 import { rich } from "@/lib/rich";
 import { getSiteVars } from "@/lib/vars";
+import FaqQuestionModal from "./FaqQuestionModal";
 
 type QA = { q: string; a: string };
 
@@ -14,7 +15,10 @@ export default async function Faq() {
   return (
     <section id="faq" className="pb-16 sm:pb-24">
       <Container className="grid gap-4 md:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] md:gap-14">
-        <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={rich(t.raw("text") as string, vars)} />
+        <div className="flex flex-col gap-6">
+          <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={rich(t.raw("text") as string, vars)} />
+          <FaqQuestionModal trigger={t("askCta")} />
+        </div>
         <div>
           {items.map((it) => (
             <details key={it.q} className="faq-item border-b border-line">

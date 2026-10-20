@@ -4,7 +4,7 @@ const dir = new URL("../messages/", import.meta.url);
 const base = "uk";
 const load = (l) => JSON.parse(readFileSync(new URL(`${l}.json`, dir), "utf8"));
 const paths = (o, p = "") =>
-  o && typeof o === "object"
+  o && typeof o === "object" && !/^legal\.docs\.[^.]+\.blocks$/.test(p)
     ? Object.entries(o).flatMap(([k, v]) => paths(v, p ? `${p}.${k}` : k))
     : [p];
 

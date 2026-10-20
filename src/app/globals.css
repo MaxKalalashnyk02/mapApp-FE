@@ -39,7 +39,7 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; color-scheme: light; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; color-scheme: light; }
   body {
     @apply bg-paper text-ink font-body antialiased;
     font-size: 17px;

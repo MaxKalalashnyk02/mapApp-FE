@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import Modal from "@/components/ui/Modal";
+import StoreBadges from "@/components/ui/StoreBadges";
+import BusinessQuestionModal from "./BusinessQuestionModal";
 import Container from "@/components/ui/Container";
 
 type Perk = { title: string; text: string };
@@ -47,8 +49,29 @@ export default async function ForBusiness() {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <b className="font-display text-xl">{t("stepsTitle")}</b>
               <div className="flex flex-wrap gap-2.5">
-                <a href="#download" className="rounded-full bg-orange px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-deep">{t("cta")}</a>
-                <Link href="/support" className="rounded-full bg-tint px-5 py-3 font-semibold text-orange-deep hover:bg-tint-2">{t("ctaAlt")}</Link>
+                <Modal
+                  trigger={t("cta")}
+                  label={t("add.title")}
+                  triggerClassName="rounded-full bg-orange px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-deep"
+                >
+                  <div className="flex flex-col gap-5">
+                    <div className="pr-10">
+                      <h3 className="text-2xl font-bold">{t("add.title")}</h3>
+                      <p className="mt-2 text-[15px] text-ink-2">{t("add.text")}</p>
+                    </div>
+                    <StoreBadges />
+                    <ol className="grid gap-2.5">
+                      {steps.map((s, i) => (
+                        <li key={s} className="flex items-start gap-3 text-[15px] font-medium">
+                          <span className="grid size-7 flex-none place-items-center rounded-full bg-orange font-display text-[13px] font-bold text-white">{i + 1}</span>
+                          <span className="pt-0.5">{s}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="text-sm text-ink-3">{t("note")}</p>
+                  </div>
+                </Modal>
+                <BusinessQuestionModal trigger={t("ctaAlt")} />
               </div>
             </div>
             <ol className="grid gap-3 sm:grid-cols-3 sm:gap-5">

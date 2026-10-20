@@ -35,8 +35,8 @@ export const LAYOUTS: Record<"a" | "b", Layout> = {
 };
 
 export const COMPLEXES = [
-  { id: "varshavskyi", layout: "a", badge: "first" },
-  { id: "dibrova", layout: "b", badge: "new" },
-] as const satisfies readonly { id: string; layout: keyof typeof LAYOUTS; badge: "first" | "new" }[];
+  { id: "varshavskyi", layout: "a" },
+  { id: "dibrova", layout: "b" },
+] as const satisfies readonly { id: string; layout: keyof typeof LAYOUTS }[];
 
 export type ComplexId = (typeof COMPLEXES)[number]["id"];

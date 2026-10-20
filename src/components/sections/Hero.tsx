@@ -36,7 +36,27 @@ export default async function Hero() {
 
           <p className={`max-w-[34em] animate-rise-in text-lg text-ink-2 sm:text-[19px] ${stagger[2]}`}>{t("lede")}</p>
 
-          <StoreBadges className={`animate-rise-in ${stagger[3]}`} />
+          <div className={`flex animate-rise-in flex-col gap-3 ${stagger[3]}`}>
+            <StoreBadges />
+            <a
+              href="#business"
+              className="group flex max-w-[460px] items-center gap-3.5 rounded-2xl border border-orange-soft bg-tint p-3 pr-4 transition hover:-translate-y-0.5 hover:border-orange hover:bg-white hover:shadow-[0_18px_34px_-22px_rgba(224,82,10,.7)]"
+            >
+              <span className="grid size-11 flex-none place-items-center rounded-xl bg-orange text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[22px]" aria-hidden>
+                  <path d="M3 9l1.5-5h15L21 9" />
+                  <path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0" />
+                  <path d="M5 11.5V20h14v-8.5" />
+                  <path d="M10 20v-5h4v5" />
+                </svg>
+              </span>
+              <span className="min-w-0 flex-1 leading-snug">
+                <b className="block text-[15.5px] text-ink">{t("business.title")}</b>
+                <span className="text-sm text-ink-2">{t("business.text")}</span>
+              </span>
+              <span aria-hidden className="text-xl text-orange-deep transition group-hover:translate-x-1">→</span>
+            </a>
+          </div>
 
           <div className={`grid animate-rise-in grid-cols-2 gap-x-7 gap-y-4 pt-1.5 sm:flex sm:flex-wrap ${stagger[4]}`}>
             {facts.map((f) => (

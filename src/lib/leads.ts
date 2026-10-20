@@ -1,0 +1,84 @@
+import { NextResponse } from "next/server";
+
+const recent = new Map<string, number[]>();
+
+export type Lead = {
+  type: "complex" | "business" | "question";
+  name: string;
+  contact: string;
+  complex?: string;
+  address?: string;
+  role?: string;
+  business?: string;
+  message?: string;
+  locale: "uk" | "en";
+};
+
+export const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+export const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
+
+export async function readForm(req: Request): Promise<Record<string, unknown> | null> {
+  try {
+    const body = await req.json();
+    return body && typeof body === "object" ? body : null;
+  } catch {
+    return null;
+  }
+}
+
+export function rateLimited(req: Request, max = 5, windowMs = 10 * 60_000) {
+  const ip = clientIp(req) || "unknown";
+  const now = Date.now();
+  const hits = (recent.get(ip) ?? []).filter((t) => now - t < windowMs);
+  hits.push(now);
+  recent.set(ip, hits);
+  return hits.length > max;
+}
+
+const clientIp = (req: Request) => req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "";
+
+async function saveToAdmin(lead: Lead, ip: string): Promise<boolean | null> {
+  const api = process.env.QMAP_API_URL;
+  if (!api) return null;
+  const body = Object.fromEntries(Object.entries(lead).filter(([, v]) => v !== "" && v !== undefined));
+  try {
+    const res = await fetch(`${api.replace(/\/$/, "")}/v1/site-leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...(ip ? { "x-forwarded-for": ip } : {}) },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) console.error("site-leads: admin API error", res.status, await res.text());
+    return res.ok;
+  } catch (error) {
+    console.error("site-leads: admin API unreachable", error);
+    return false;
+  }
+}
+
+async function notifyTelegram(text: string): Promise<boolean | null> {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return null;
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: "HTML", disable_web_page_preview: true }),
+    });
+    if (!res.ok) console.error("site-leads: telegram error", res.status, await res.text());
+    return res.ok;
+  } catch (error) {
+    console.error("site-leads: telegram unreachable", error);
+    return false;
+  }
+}
+
+export async function deliverLead(req: Request, lead: Lead, telegramText: string) {
+  const [admin, telegram] = await Promise.all([saveToAdmin(lead, clientIp(req)), notifyTelegram(telegramText)]);
+  if (admin === null && telegram === null) {
+    console.error("site-leads: neither QMAP_API_URL nor Telegram is configured");
+    return NextResponse.json({ ok: false }, { status: 500 });
+  }
+  const ok = admin ?? telegram;
+  return NextResponse.json({ ok }, { status: ok ? 200 : 502 });
+}

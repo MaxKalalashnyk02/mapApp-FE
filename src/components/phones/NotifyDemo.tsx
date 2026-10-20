@@ -58,7 +58,7 @@ export default function NotifyDemo() {
 
   return (
     <div ref={ref} aria-hidden className="pointer-events-none absolute inset-0">
-      <div style={SCREEN} className="absolute overflow-hidden rounded-[12cqw]">
+      <div style={SCREEN} className="absolute overflow-hidden rounded-[12cqw] [clip-path:inset(0_round_12cqw)]">
         <div
           className={`absolute inset-x-[2.4cqw] top-[12.5cqw] flex items-center gap-[2.8cqw] rounded-[5.5cqw] bg-white/90 p-[3cqw] shadow-[0_3cqw_8cqw_-2cqw_rgba(60,30,10,.35)] ring-1 ring-black/5 backdrop-blur-md transition duration-500 ease-[cubic-bezier(.2,1.25,.35,1)] ${
             shown ? "translate-y-0 opacity-100" : "-translate-y-[160%] opacity-0"

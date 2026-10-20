@@ -2,9 +2,12 @@ import { isPlaceholder } from "@/config/site";
 import { interpolate, rich, type Vars } from "@/lib/rich";
 import CopyField from "./CopyField";
 
+type Item = string | { text: string; items: string[] };
+
 export type Block =
-  | { type: "p" | "h2" | "h3" | "note"; text: string }
-  | { type: "ul" | "steps"; items: string[] }
+  | { type: "p" | "h2" | "h3" | "note" | "label"; text: string }
+  | { type: "ul"; items: Item[] }
+  | { type: "steps"; items: string[] }
   | { type: "table"; head: string[]; rows: string[][] }
   | { type: "copy"; value: string };
 
@@ -24,9 +27,22 @@ export default function LegalDoc({ blocks, vars }: { blocks: Block[]; vars: Vars
           case "ul":
             return (
               <ul key={i} className="my-2.5 grid list-disc gap-1.5 pl-5 text-ink-2 marker:text-orange">
-                {b.items.map((it, j) => <li key={j}>{rich(it, vars)}</li>)}
+                {b.items.map((it, j) =>
+                  typeof it === "string" ? (
+                    <li key={j}>{rich(it, vars)}</li>
+                  ) : (
+                    <li key={j}>
+                      {rich(it.text, vars)}
+                      <ul className="mt-1.5 grid list-[circle] gap-1 pl-5">
+                        {it.items.map((sub, k) => <li key={k}>{rich(sub, vars)}</li>)}
+                      </ul>
+                    </li>
+                  ),
+                )}
               </ul>
             );
+          case "label":
+            return <p key={i} className="mt-4 mb-2 font-mono text-[12.5px] tracking-[0.1em] text-ink-3 uppercase">{rich(b.text, vars)}</p>;
           case "steps":
             return (
               <ol key={i} className="my-3 grid gap-2.5">

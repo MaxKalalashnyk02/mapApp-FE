@@ -1,8 +1,10 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import SectionHead from "@/components/ui/SectionHead";
 import { COMPLEXES, LAYOUTS } from "@/config/complexes";
+import ComplexRequestModal from "./ComplexRequestModal";
+import Modal from "@/components/ui/Modal";
+import StoreBadges from "@/components/ui/StoreBadges";
 
 function Plan({ layout }: { layout: keyof typeof LAYOUTS }) {
   const l = LAYOUTS[layout];
@@ -38,12 +40,26 @@ export default async function Complexes() {
                 <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-ok shadow-sm">
                   <i className="size-2 animate-blink rounded-full bg-ok" />{t("live")}
                 </span>
-                <span className="absolute top-4 right-4 rounded-full bg-orange px-2.5 py-1 text-xs font-semibold text-white">{t(c.badge)}</span>
+                <span className="absolute top-4 right-4 rounded-full bg-orange px-2.5 py-1 text-xs font-semibold text-white">{t(`items.${c.id}.badge`)}</span>
               </div>
               <div className="flex flex-1 flex-col gap-2 p-6">
                 <h3 className="text-xl font-bold">{t(`items.${c.id}.name`)}</h3>
                 <p className="text-[15.5px] text-ink-2">{t(`items.${c.id}.text`)}</p>
-                <a href="#download" className="mt-auto pt-3 text-[15px] font-semibold text-orange-deep hover:text-orange">{t("open")} →</a>
+                <div className="mt-auto pt-3">
+                  <Modal
+                    trigger={`${t("open")} →`}
+                    label={t("openModal.title", { name: t(`items.${c.id}.name`) })}
+                    triggerClassName="text-left text-[15px] font-semibold text-orange-deep hover:text-orange"
+                  >
+                    <div className="flex flex-col gap-5">
+                      <div className="pr-10">
+                        <h3 className="text-2xl font-bold">{t("openModal.title", { name: t(`items.${c.id}.name`) })}</h3>
+                        <p className="mt-2 text-[15px] text-ink-2">{t("openModal.text", { name: t(`items.${c.id}.name`) })}</p>
+                      </div>
+                      <StoreBadges />
+                    </div>
+                  </Modal>
+                </div>
               </div>
             </article>
           ))}
@@ -60,9 +76,7 @@ export default async function Complexes() {
                 </li>
               ))}
             </ol>
-            <Link href="/support" className="mt-auto inline-flex self-start rounded-full bg-orange px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-orange-deep">
-              {t("request.cta")}
-            </Link>
+            <ComplexRequestModal />
           </article>
         </div>
       </Container>

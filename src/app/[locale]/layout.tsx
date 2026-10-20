@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { site } from "@/config/site";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CookieNotice from "@/components/layout/CookieNotice";
 import "../globals.css";
 
 import "@fontsource-variable/unbounded";
@@ -47,6 +48,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           <Header />
           {children}
           <Footer />
+          <CookieNotice />
         </NextIntlClientProvider>
       </body>
     </html>

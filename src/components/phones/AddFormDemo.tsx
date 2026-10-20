@@ -19,8 +19,9 @@ const FIELDS = [
   { frame: box(37, 588, 387, 625), cover: box(45, 591, 380, 622), text: "ranok.coffee" },
 ];
 const SAVE = box(37, 773, 387, 814);
+const SCREEN = box(21, 16, 403, 848);
 
-type Phase = "typing" | "press" | "hold" | "reset";
+type Phase = "typing" | "press" | "done" | "reset";
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export default function AddFormDemo() {
@@ -58,8 +59,8 @@ export default function AddFormDemo() {
         setActive(-1);
         setPhase("press");
         await sleep(220);
-        setPhase("hold");
-        await sleep(2600);
+        setPhase("done");
+        await sleep(3400);
         setPhase("reset");
         await sleep(450);
       }
@@ -109,6 +110,42 @@ export default function AddFormDemo() {
         style={SAVE}
         className={`absolute rounded-[3.8cqw] transition duration-200 ${phase === "press" ? "scale-95 bg-black/15" : "bg-transparent"}`}
       />
+      <MapReveal open={phase === "done"} />
+    </div>
+  );
+}
+
+function MapReveal({ open }: { open: boolean }) {
+  return (
+    <div style={SCREEN} className="absolute overflow-hidden rounded-[12cqw] [clip-path:inset(0_round_12cqw)]">
+      <div
+        className={`absolute inset-0 transition-[translate,visibility] duration-500 ease-[cubic-bezier(.25,.9,.3,1)] ${open ? "visible translate-x-0" : "invisible translate-x-full"}`}
+      >
+        <div
+          style={{ backgroundImage: "url(/screens/map-v3.png)", width: "111.54%", height: "104.54%", left: "-5.77%", top: "-2.27%" }}
+          className="absolute bg-[length:100%_100%]"
+        />
+
+        <div className="absolute top-[57%] left-[55%] -translate-x-1/2 -translate-y-full">
+          <div
+            className={`absolute bottom-[calc(100%+1.5cqw)] left-1/2 -translate-x-1/2 rounded-[3cqw] bg-white px-[2.6cqw] py-[1.6cqw] text-center whitespace-nowrap shadow-[0_2cqw_5cqw_-1cqw_rgba(60,30,10,.35)] transition duration-400 delay-[1100ms] ${
+              open ? "translate-y-0 opacity-100" : "translate-y-[2cqw] opacity-0"
+            }`}
+          >
+            <b className="block text-[3.3cqw] leading-tight text-ink">Кав'ярня «Ранок»</b>
+            <span className="text-[2.7cqw] font-semibold text-orange-deep">Новий · Буд. 3, секція 2</span>
+          </div>
+          <div
+            className={`relative transition duration-500 delay-[650ms] ease-[cubic-bezier(.3,1.6,.5,1)] ${
+              open ? "translate-y-0 opacity-100" : "-translate-y-[10cqw] opacity-0"
+            }`}
+          >
+            <span className={`absolute inset-0 rounded-full bg-orange/40 ${open ? "animate-ping" : ""}`} />
+            <span className="relative grid size-[10cqw] place-items-center rounded-full border-[0.8cqw] border-orange bg-white text-[5cqw] shadow-[0_1.5cqw_3cqw_rgba(60,30,10,.3)]">☕</span>
+            <span className="absolute top-full left-1/2 -mt-[0.6cqw] size-[2.4cqw] -translate-x-1/2 rotate-45 bg-orange" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ export const LEGAL_DOCS = {
   terms: "terms",
   "content-rules": "contentRules",
   "delete-account": "deleteAccount",
+  cookies: "cookies",
   support: "support",
 } as const;
 

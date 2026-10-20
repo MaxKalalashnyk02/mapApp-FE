@@ -26,6 +26,10 @@
     "titleStart": "Everything near your home, on a",
     "titleHighlight": "living map",
     "lede": "QMap shows the cafés, services and shops of your residential complex down to the section and entrance. Businesses are added in minutes, and the map updates right after moderation.",
+    "business": {
+      "title": "Own a business in the complex?",
+      "text": "Put your place on the map for free"
+    },
     "facts": [
       {
         "value": "1 steps",
@@ -321,12 +325,51 @@
     ],
     "cta": "Add a business",
     "ctaAlt": "Ask a question",
-    "note": "Listing is free. All you need is a QMap account and a few minutes."
+    "note": "Listing is free. All you need is a QMap account and a few minutes.",
+    "add": {
+      "title": "Download QMap",
+      "text": "Places are added right in the app: install QMap, choose your complex and tap “+ Add business”."
+    },
+    "ask": {
+      "title": "Ask a question",
+      "intro": "Tell us what you would like to know about listing your place and we will get back to you.",
+      "name": "Your name",
+      "business": "Business",
+      "businessPh": "Name of your business",
+      "contact": "Phone, Telegram or email",
+      "contactPh": "+380… or @username",
+      "question": "Question",
+      "questionPh": "For example: how do I change hours or add several places?",
+      "submit": "Send question",
+      "sending": "Sending…",
+      "error": "We couldn’t send it. Please try again a little later.",
+      "note": "By sending this form you agree that we will use this data to reply to you.",
+      "sentTitle": "Question sent",
+      "sentText": "Thank you! We will get back to you soon.",
+      "done": "Done"
+    }
   },
   "faq": {
     "eyebrow": "FAQ",
     "title": "Frequently asked questions",
-    "text": "Didn't find an answer? Email us at {email}.",
+    "text": "Didn't find an answer? Write to us and we will get back to you soon.",
+    "askCta": "Ask a question",
+    "ask": {
+      "title": "Ask a question",
+      "intro": "Write your question and we will reply to the contact you leave.",
+      "name": "Your name",
+      "contact": "Phone, Telegram or email",
+      "contactPh": "+380… or @username",
+      "question": "Question",
+      "questionPh": "What would you like to know about QMap?",
+      "submit": "Send question",
+      "sending": "Sending…",
+      "error": "We couldn’t send it. Please try again a little later.",
+      "note": "By sending this form you agree that we will use this data to reply to you.",
+      "sentTitle": "Question sent",
+      "sentText": "Thank you! We will get back to you soon.",
+      "done": "Done"
+    },
     "items": [
       {
         "q": "Is QMap free?",
@@ -390,24 +433,28 @@
         "title": "Privacy Policy",
         "blocks": [
           {
+            "type": "note",
+            "text": "**Translation.** This is an English translation for convenience. If it differs from the Ukrainian version, the Ukrainian version prevails."
+          },
+          {
             "type": "p",
-            "text": "This Policy explains what personal data the **{app}** mobile application (the “App”) and this website collect, why we process it, who we share it with and how you can control your data. It is prepared in line with the Law of Ukraine “On Personal Data Protection”, the EU General Data Protection Regulation (GDPR) where applicable, and App Store and Google Play requirements."
+            "text": "This Policy explains what personal data the **{app}** mobile app (the “App”) and the website {domain} (together, the “Service”) process, why, who receives the data and what rights you have. It is prepared under the Law of Ukraine “On Personal Data Protection” and serves as the notice to the data subject under Article 12 of that Law."
           },
           {
             "type": "note",
-            "text": "**In short.** We collect the minimum data needed for the map to work. We do not sell personal data, do not show personalised ads and do not track you across other companies' apps or websites."
+            "text": "**In short.** We process only the data the map needs to work. We do not sell personal data, show personalised ads or track you across other apps or websites."
           },
           {
             "type": "h2",
-            "text": "1. Who is responsible for your data"
+            "text": "1. Owner of personal data"
           },
           {
             "type": "p",
-            "text": "Data controller: {company}, {companyId}, address: {address}. Privacy contact: {email}."
+            "text": "Owner of personal data: {company}, {companyId}, registered address: {address}. Email for personal data questions: {email}."
           },
           {
             "type": "h2",
-            "text": "2. Data we collect"
+            "text": "2. What data we process"
           },
           {
             "type": "h3",
@@ -416,9 +463,9 @@
           {
             "type": "ul",
             "items": [
-              "**Account data:** name, email address and/or phone number, password in hashed form, the residential complex you chose. If you sign in with Apple or Google, we receive the identifier and email that service allows.",
-              "**Business data:** place name, category, location (building, section, entrance), opening hours, contact phone, website or social links, photos. This data is published on the map and visible to all users.",
-              "**Reports:** content reports, map error reports and support requests."
+              "**Account data:** name, email address and/or phone number, the residential complex you chose. If you sign in with Apple or Google, we receive the identifier and email that service shares. Passwords are stored only as hashes.",
+              "**Business data:** business name, category, location in the complex (building, section, entrance), opening hours, contact phone, website or social media links, photos. If a sole proprietor runs the business, this data may include their name and phone. Business data is published on the map and visible to all users.",
+              "**Messages:** content reports, map error reports, support emails."
             ]
           },
           {
@@ -428,106 +475,128 @@
           {
             "type": "ul",
             "items": [
-              "**Location** (precise or approximate) only with your permission. It is used on the device to show your position on the map and build a route. We do not store your location history.",
-              "**Technical data:** device model, OS and App version, language, push notification token.",
-              "**Diagnostics:** crash and error reports to fix problems in the App.",
-              "**Usage data:** de-identified statistics on screens and features to improve the product."
+              "**Location** (precise or approximate), only with your permission in the phone settings. It is used on the device to show where you are and build routes. We do not send coordinates to our servers or keep a location history.",
+              "**Technical data:** device model, operating system and App version, language, push notification identifier.",
+              "**Diagnostics:** crash and error reports with an installation identifier.",
+              "**Usage data:** screen views and actions in the App, such as opening a business card, building a route or tapping “Call”. Business owners see aggregated statistics for their card (views, routes, calls) with no data about individual users."
             ]
           },
           {
             "type": "h3",
-            "text": "2.3. What we do not collect"
+            "text": "2.3. What we do not process"
           },
           {
             "type": "p",
-            "text": "We do not collect your address book, photos you have not selected, financial data, health data, biometrics or advertising identifiers (IDFA/AAID) for tracking."
+            "text": "Phone contacts, photos you did not choose, payment data, health data, biometric data, advertising identifiers (IDFA/AAID)."
           },
           {
             "type": "h2",
-            "text": "3. Why we use data"
+            "text": "3. Purposes and legal grounds"
+          },
+          {
+            "type": "p",
+            "text": "The legal grounds are set out in Article 11 of the Law of Ukraine “On Personal Data Protection”."
           },
           {
             "type": "table",
             "head": [
               "Purpose",
               "Data",
-              "Legal basis"
+              "Legal ground"
             ],
             "rows": [
               [
-                "Creating and maintaining your account",
+                "Registering and maintaining your account",
                 "Account data",
-                "Performance of contract (Terms of Use)"
+                "Conclusion and performance of a transaction (the Terms of Use)"
               ],
               [
-                "Publishing and updating businesses on the map",
+                "Publishing and updating a business on the map",
                 "Business data",
-                "Performance of contract"
+                "Consent of the business owner or representative, given in the “Add business” form"
               ],
               [
-                "Showing your position and routes",
+                "Showing your location and routes",
                 "Location",
-                "Your consent (system permission)"
+                "Consent (permission in the phone settings)"
               ],
               [
-                "Notifications about new places and changes",
-                "Push token, settings",
-                "Your consent"
+                "Push notifications about new places and changes",
+                "Push token, notification settings",
+                "Consent"
+              ],
+              [
+                "Statistics for business owners, improving the App",
+                "Usage data",
+                "Protection of the owner’s legitimate interests"
               ],
               [
                 "Moderation, security, abuse prevention",
-                "Account data, reports, technical data",
-                "Legitimate interest"
+                "Account data, messages, technical data",
+                "Protection of the owner’s legitimate interests"
               ],
               [
-                "Fixing crashes, improving the App",
-                "Diagnostics, de-identified statistics",
-                "Legitimate interest"
+                "Fixing crashes",
+                "Diagnostics",
+                "Protection of the owner’s legitimate interests"
               ],
               [
-                "Answering your requests",
-                "Email, request content",
-                "Contract / legitimate interest"
+                "Replying to messages",
+                "Email, message content",
+                "Conclusion and performance of a transaction"
+              ],
+              [
+                "Complying with the law",
+                "Data required by law",
+                "Performance of the owner’s legal obligation"
               ]
             ]
           },
           {
             "type": "h2",
-            "text": "4. Who we share data with"
+            "text": "4. Processors and other recipients"
           },
           {
             "type": "p",
-            "text": "We do not sell or rent personal data. Data may be shared only with:"
+            "text": "We do not sell personal data or share it for advertising. Data may be received by:"
           },
           {
             "type": "ul",
             "items": [
-              "**Service providers** processing data on our behalf under contract and only for the stated purposes: {processors}.",
-              "**Other users**, for public business data (name, address in the complex, hours, contacts, photos).",
-              "**Public authorities**, where required by law or a properly issued request.",
-              "**A successor** in case of reorganisation or sale of the business, with prior notice to users."
+              {
+                "text": "**Personal data processors** that process data on our behalf and only for the purposes of this Policy:",
+                "items": [
+                  "Google LLC (USA): Firebase and Google Cloud for data storage, authentication including SMS sign-in by phone number, push notifications (Firebase Cloud Messaging), crash reports (Crashlytics) and usage analytics;",
+                  "Apple Inc. (USA): push notifications on iPhone (Apple Push Notification service), Sign in with Apple;",
+                  "Vercel Inc. (USA): hosting of the website {domain};",
+                  "{mapProvider}: map display."
+                ]
+              },
+              "**Other users**: only public business data (name, location in the complex, hours, contacts, photos).",
+              "**Public authorities**: in the cases and manner provided by law.",
+              "**A legal successor**: if the Service is reorganised or sold, with prior notice to users."
             ]
           },
           {
             "type": "h2",
-            "text": "5. International transfers"
+            "text": "5. Transfers outside Ukraine"
           },
           {
             "type": "p",
-            "text": "Some providers may store data on servers outside Ukraine. In such cases we use providers that ensure an adequate level of protection, including on the basis of standard contractual clauses."
+            "text": "The Service’s main database is hosted on servers in {dbRegion}. Some data (crash reports, push tokens, website technical logs) may be processed on servers in the USA. Such transfers comply with Article 29 of the Law of Ukraine “On Personal Data Protection”: they are needed to perform the Terms of Use concluded in your interest and are made with the consent you give when you register. We only work with providers that are contractually bound to protect the data."
           },
           {
             "type": "h2",
-            "text": "6. How long we keep data"
+            "text": "6. Retention"
           },
           {
             "type": "ul",
             "items": [
-              "Account data: while the account is active; deleted within 30 days after account deletion.",
-              "Public business data: while the listing is published or until the owner requests deletion.",
-              "Support requests and reports: up to 12 months after closing.",
+              "Account data: while the account is active, and no more than 30 days after it is deleted.",
+              "Business data: while the card is published or until a deletion request.",
+              "Messages and reports: up to 12 months after they are handled.",
               "Diagnostics and technical logs: up to 90 days.",
-              "Data we must keep by law: for the period required by law."
+              "Data with a retention period set by law: for that period."
             ]
           },
           {
@@ -536,19 +605,32 @@
           },
           {
             "type": "p",
-            "text": "You have the right to know what data we process; get a copy; correct inaccurate data; delete your data and account; restrict or object to processing; withdraw consent (for example, turn off location or notifications in device settings); data portability; and lodge a complaint with the Ukrainian Parliament Commissioner for Human Rights or your local supervisory authority."
+            "text": "Under Article 8 of the Law of Ukraine “On Personal Data Protection” you have the right to:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "know what data about you we process, why, where it is stored and who receives it;",
+              "access your data;",
+              "be told whether your data is processed within 30 calendar days of your request;",
+              "require correction or destruction of inaccurate or unlawfully processed data;",
+              "object to the processing of your data;",
+              "withdraw consent at any time (for example, by turning off location or notifications in the phone settings, or by deleting your account);",
+              "protect your data against unlawful processing and claim compensation for damage;",
+              "complain to the Ukrainian Parliament Commissioner for Human Rights ([ombudsman.gov.ua](https://ombudsman.gov.ua)) or go to court."
+            ]
           },
           {
             "type": "p",
-            "text": "To exercise your rights, email {email}. We respond within 30 days."
+            "text": "To use these rights, write to {email} from the email or phone linked to your account. We reply within 30 calendar days."
           },
           {
             "type": "h2",
-            "text": "8. Account deletion"
+            "text": "8. Deleting your account"
           },
           {
             "type": "p",
-            "text": "You can delete your account in the App (Profile → Settings → Delete account) or send a request without signing in. Details on the [Account and data deletion](/delete-account) page."
+            "text": "You can delete your account in the App (Profile → Settings → Delete account) or by email without signing in. See [Delete Account and Data](/delete-account)."
           },
           {
             "type": "h2",
@@ -556,7 +638,7 @@
           },
           {
             "type": "p",
-            "text": "The App is not intended for persons under {minAge}. We do not knowingly collect children's data. If you believe a child has given us data, contact us and we will delete it."
+            "text": "The Service is not intended for people under 16. We do not knowingly process their data. If you think a child has given us their data, write to {email} and we will delete it."
           },
           {
             "type": "h2",
@@ -564,17 +646,17 @@
           },
           {
             "type": "p",
-            "text": "We encrypt data in transit (TLS), store passwords only as hashes, limit staff access to data and review our safeguards regularly. No method of transmission over the internet is completely secure, but we do everything reasonably possible to protect your data."
+            "text": "We encrypt data in transit (TLS), store passwords only as hashes, limit access to data to the people who need it for their work, and review our safeguards regularly. If a data breach may affect your rights, we will tell you without undue delay."
           },
           {
             "type": "h2",
-            "text": "11. Summary for App Store and Google Play"
+            "text": "11. Summary for the App Store and Google Play"
           },
           {
             "type": "table",
             "head": [
               "Data type",
-              "Collected",
+              "Processed",
               "Linked to you",
               "Tracking"
             ],
@@ -586,14 +668,14 @@
                 "No"
               ],
               [
-                "User content (business data, photos, reports)",
+                "User content (business data, photos, messages)",
                 "Yes",
                 "Yes",
                 "No"
               ],
               [
                 "Location",
-                "With permission, on device",
+                "On the device only, not sent to servers",
                 "No",
                 "No"
               ],
@@ -604,22 +686,22 @@
                 "No"
               ],
               [
-                "Diagnostics (crashes, performance)",
+                "Diagnostics (crashes)",
                 "Yes",
-                "No",
+                "Yes (installation ID)",
                 "No"
               ],
               [
                 "Usage data",
-                "Yes, de-identified",
-                "No",
+                "Yes",
+                "Yes",
                 "No"
               ]
             ]
           },
           {
             "type": "p",
-            "text": "All data is encrypted in transit. Users can request data deletion."
+            "text": "All data is encrypted in transit. You can ask us to delete your data."
           },
           {
             "type": "h2",
@@ -627,138 +709,7 @@
           },
           {
             "type": "p",
-            "text": "We may update this Policy. We will notify you of material changes in the App or by email at least 14 days before they take effect. The date of the latest version is shown at the top of this page."
-          },
-          {
-            "type": "h2",
-            "text": "13. Contacts"
-          },
-          {
-            "type": "p",
-            "text": "{company}, {address}. Email: {email}."
-          }
-        ]
-      },
-      "terms": {
-        "title": "Terms of Use",
-        "blocks": [
-          {
-            "type": "p",
-            "text": "These Terms govern your use of the **{app}** application and website (together, the “Service”) provided by {company} (“we”). By downloading the App or creating an account you agree to these Terms and the [Privacy Policy](/privacy). If you do not agree, do not use the Service."
-          },
-          {
-            "type": "h2",
-            "text": "1. What the Service is"
-          },
-          {
-            "type": "p",
-            "text": "{app} is an interactive map of residential complexes connected to the Service. Residents find businesses and services in their complex, and business owners publish and update information about their places."
-          },
-          {
-            "type": "h2",
-            "text": "2. Account"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "Some features require an account. You must be at least {minAge} years old.",
-              "You provide accurate information and are responsible for keeping access to your account secure.",
-              "You can delete your account at any time in the App or by [following these steps](/delete-account)."
-            ]
-          },
-          {
-            "type": "h2",
-            "text": "3. Listing a business"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "Only the owner or an authorised representative of a place that actually operates in the complex may add it.",
-              "You confirm that the information provided (name, address in the complex, hours, contacts, photos) is true and does not infringe third-party rights.",
-              "Every request and change is moderated. We may reject, edit or unpublish a listing that breaks these Terms or the [Content Rules](/content-rules).",
-              "You agree to update the information if your hours, location or status change."
-            ]
-          },
-          {
-            "type": "h2",
-            "text": "4. Your content"
-          },
-          {
-            "type": "p",
-            "text": "You keep the rights to content you upload (texts, photos). By publishing it, you grant us a free, non-exclusive licence to use, reproduce and display it within the Service for as long as it is published."
-          },
-          {
-            "type": "h2",
-            "text": "5. Prohibited"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "posting false, offensive or illegal information or spam;",
-              "impersonating other people or businesses;",
-              "interfering with the Service, bypassing security or scraping data;",
-              "using the Service in breach of the laws of Ukraine."
-            ]
-          },
-          {
-            "type": "p",
-            "text": "Detailed requirements are in the [Content Rules](/content-rules)."
-          },
-          {
-            "type": "h2",
-            "text": "6. Information on the map"
-          },
-          {
-            "type": "p",
-            "text": "We check data before publishing, but business information is provided by the owners. We do not guarantee it is fully accurate and are not responsible for the quality of goods or services. If you spot a mistake, report it in the App."
-          },
-          {
-            "type": "h2",
-            "text": "7. Intellectual property"
-          },
-          {
-            "type": "p",
-            "text": "The App, its design, the complex map, the {app} logo and name belong to us or our licensors. We grant you a limited, non-exclusive, non-transferable licence to use the App for personal, non-commercial purposes."
-          },
-          {
-            "type": "h2",
-            "text": "8. Limitation of liability"
-          },
-          {
-            "type": "p",
-            "text": "The Service is provided “as is”. To the extent permitted by law, we are not liable for indirect damages, loss of data or profit related to the use of the Service. This does not limit your rights under consumer protection law."
-          },
-          {
-            "type": "h2",
-            "text": "9. Suspension and termination"
-          },
-          {
-            "type": "p",
-            "text": "We may restrict or terminate access to an account that breaks these Terms. You may stop using the Service at any time by deleting your account."
-          },
-          {
-            "type": "h2",
-            "text": "10. App store terms"
-          },
-          {
-            "type": "p",
-            "text": "If you downloaded the App from the App Store, these Terms are between you and us, not Apple Inc. Apple is not responsible for the App or its support. Apple's standard Licensed Application End User License Agreement (EULA) also applies. Apple and its subsidiaries are third-party beneficiaries of these Terms. For Google Play, the Google Play Terms of Service apply."
-          },
-          {
-            "type": "h2",
-            "text": "11. Governing law"
-          },
-          {
-            "type": "p",
-            "text": "These Terms are governed by the laws of Ukraine. Disputes are resolved by negotiation, and failing that, in accordance with the laws of Ukraine."
-          },
-          {
-            "type": "h2",
-            "text": "12. Changes to the Terms"
-          },
-          {
-            "type": "p",
-            "text": "We may change these Terms. We will notify you of material changes in the App at least 14 days in advance. By continuing to use the Service you accept the new version."
+            "text": "We may update this Policy. We will announce material changes in the App and by email at least 14 days before they take effect. If changes affect processing based on consent, we will ask for your consent again."
           },
           {
             "type": "h2",
@@ -770,12 +721,172 @@
           }
         ]
       },
+      "terms": {
+        "title": "Terms of Use",
+        "blocks": [
+          {
+            "type": "note",
+            "text": "**Translation.** This is an English translation for convenience. If it differs from the Ukrainian version, the Ukrainian version prevails."
+          },
+          {
+            "type": "p",
+            "text": "These Terms are an agreement between you and {company}, {companyId} (“we”) on the use of the **{app}** app and the website {domain} (together, the “Service”). They are an electronic contract under the Law of Ukraine “On Electronic Commerce”."
+          },
+          {
+            "type": "note",
+            "text": "**How the agreement is made.** The agreement is concluded when you tick “I agree to the Terms of Use and the Privacy Policy” during registration. If you use the Service without an account, you accept these Terms by using it. If you do not agree, do not use the Service."
+          },
+          {
+            "type": "h2",
+            "text": "1. The Service"
+          },
+          {
+            "type": "p",
+            "text": "{app} is an interactive map of the residential complexes connected to the Service. Residents find businesses and services in their complex, and business owners publish and update information about their places."
+          },
+          {
+            "type": "h2",
+            "text": "2. Price"
+          },
+          {
+            "type": "p",
+            "text": "The Service is currently free for residents and businesses. We may introduce paid features for businesses in the future. They will be optional, and we will publish their terms before launch. Existing free features will not become paid without your consent."
+          },
+          {
+            "type": "h2",
+            "text": "3. Account"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "You can view the map without an account. An account is needed to add or edit a business, save favourite places, and send reports.",
+              "You must be at least 16 to create an account.",
+              "You provide accurate data and are responsible for keeping access to your account secure.",
+              "You can delete your account at any time in the App or by following [these instructions](/delete-account)."
+            ]
+          },
+          {
+            "type": "h2",
+            "text": "4. Listing a business"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Only the owner or an authorised representative of a business that actually operates in a complex connected to the Service may add it.",
+              "You confirm that the business information (name, location in the complex, hours, contacts, photos) is true and does not infringe third-party rights, and that the business operates lawfully, including holding any required licences.",
+              "Every submission and change is moderated. We may ask for documents confirming your authority or licence, and may reject, edit or unpublish a card that breaks these Terms or the [Content Rules](/content-rules).",
+              "You agree to update the information if the hours change or the business moves or closes."
+            ]
+          },
+          {
+            "type": "h2",
+            "text": "5. Business offers"
+          },
+          {
+            "type": "p",
+            "text": "Businesses may publish offers and discounts for residents. The business that publishes an offer sets and fulfils its terms. We are not a party to your dealings with a business and are not responsible for offers or for the quality of a business’s goods and services."
+          },
+          {
+            "type": "h2",
+            "text": "6. Your content"
+          },
+          {
+            "type": "p",
+            "text": "You keep the rights to the content you upload (text, photos). By publishing it, you give us a free, non-exclusive, worldwide licence to use, reproduce and display it within the Service for as long as it is published. The licence ends when the content is deleted, unless the law requires us to keep it."
+          },
+          {
+            "type": "h2",
+            "text": "7. Not allowed"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "posting false, offensive or unlawful information, or spam;",
+              "impersonating other people or businesses;",
+              "interfering with the Service, bypassing its protection, or scraping data;",
+              "using the Service in breach of Ukrainian law."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Details are in the [Content Rules](/content-rules)."
+          },
+          {
+            "type": "h2",
+            "text": "8. Information on the map"
+          },
+          {
+            "type": "p",
+            "text": "We check data before publishing it, but business owners provide the information about their businesses. We do not guarantee it is fully accurate. If you spot a mistake, tap “Report a mistake” on the business card or write to {email}."
+          },
+          {
+            "type": "h2",
+            "text": "9. Intellectual property"
+          },
+          {
+            "type": "p",
+            "text": "The App, its design, the complex maps, the logo and the {app} name belong to us or our licensors. We give you a limited, non-exclusive, non-transferable licence to use the App for its intended purpose, including listing and managing business cards."
+          },
+          {
+            "type": "h2",
+            "text": "10. Liability"
+          },
+          {
+            "type": "p",
+            "text": "The Service is provided “as is”. To the extent permitted by law, we are not liable for indirect losses or loss of data or profit related to using the Service. This does not limit your rights under Ukrainian law, including the Law of Ukraine “On Consumer Rights Protection”."
+          },
+          {
+            "type": "h2",
+            "text": "11. Suspension and termination"
+          },
+          {
+            "type": "p",
+            "text": "We may restrict or end access to an account that breaks these Terms and will tell you why, unless the law forbids it. You may end the agreement at any time by deleting your account."
+          },
+          {
+            "type": "h2",
+            "text": "12. App store terms"
+          },
+          {
+            "type": "p",
+            "text": "If you downloaded the App from the App Store, these Terms are between you and us, not Apple Inc. Apple is not responsible for the App or its support. Apple’s standard Licensed Application End User License Agreement (EULA) also applies. Apple and its subsidiaries are third-party beneficiaries of these Terms. If you downloaded the App from Google Play, the Google Play Terms of Service also apply."
+          },
+          {
+            "type": "h2",
+            "text": "13. Governing law and disputes"
+          },
+          {
+            "type": "p",
+            "text": "These Terms are governed by the law of Ukraine. Disputes are settled by negotiation and, failing agreement, by a court under Ukrainian law. You can send a claim to {email}; we reply within 14 days."
+          },
+          {
+            "type": "h2",
+            "text": "14. Changes to these Terms"
+          },
+          {
+            "type": "p",
+            "text": "We may change these Terms. We will announce material changes in the App and by email at least 14 days before they take effect. If you do not agree, you can delete your account. Continuing to use the Service after the changes take effect means you accept them."
+          },
+          {
+            "type": "h2",
+            "text": "15. Contacts"
+          },
+          {
+            "type": "p",
+            "text": "{company}, {companyId}, {address}. Email: {email}."
+          }
+        ]
+      },
       "contentRules": {
         "title": "Content Rules",
         "blocks": [
           {
+            "type": "note",
+            "text": "**Translation.** This is an English translation for convenience. If it differs from the Ukrainian version, the Ukrainian version prevails."
+          },
+          {
             "type": "p",
-            "text": "These rules apply to all content users add to **{app}**: business listings, photos, descriptions, error reports and complaints. They are part of the [Terms of Use](/terms)."
+            "text": "These rules apply to all content users add to **{app}**: business cards, photos, descriptions, offers, error reports and complaints. They are part of the [Terms of Use](/terms)."
           },
           {
             "type": "h2",
@@ -784,9 +895,10 @@
           {
             "type": "ul",
             "items": [
-              "Real places and services operating in a residential complex connected to {app}.",
-              "The exact address in the complex, current hours and contacts.",
-              "Your own photos of the storefront, entrance or interior."
+              "Real businesses and services operating lawfully in a complex connected to {app}.",
+              "The exact location in the complex, current hours and contacts.",
+              "Your own photos of the business’s front, entrance or interior.",
+              "Offers and discounts the business actually provides."
             ]
           },
           {
@@ -796,10 +908,12 @@
           {
             "type": "ul",
             "items": [
-              "False or made-up places, wrong addresses.",
+              "Fake or made-up businesses, wrong addresses, other people’s businesses without authority.",
               "Offensive, discriminatory, violent or sexual content.",
-              "Hate speech, threats, harassment, sharing other people's personal data.",
-              "Advertising prohibited goods or services, fraud, spam.",
+              "Hate speech, threats, harassment, sharing other people’s personal data.",
+              "Propaganda for the aggressor state, justifying or denying armed aggression against Ukraine, symbols banned by law.",
+              "Advertising goods and services that are banned or restricted in Ukraine, and activity without a required licence.",
+              "Fraud, misleading advertising, spam.",
               "Content that infringes copyright or trademarks."
             ]
           },
@@ -809,31 +923,31 @@
           },
           {
             "type": "p",
-            "text": "Every new listing and every change is reviewed by a moderator before publishing. We also use automatic filtering of profanity."
+            "text": "A moderator checks every new card and every change before publication, usually within 24 hours. For licensed activities (pharmacies, medical services and similar) the moderator may ask for the licence number. We also filter profanity automatically."
           },
           {
             "type": "h2",
-            "text": "4. How to report"
+            "text": "4. How to report content"
           },
           {
             "type": "steps",
             "items": [
-              "Open the place card on the map.",
+              "Open the business card on the map.",
               "Tap “⋯” → “Report” and choose a reason.",
               "Add a comment if needed and send."
             ]
           },
           {
             "type": "p",
-            "text": "You can also email {email}. We review reports within 24 hours, remove content that breaks the rules and block the author's account when necessary."
+            "text": "You can also write to {email}. We review reports within 24 hours, remove content that breaks the rules and block the author’s account if needed."
           },
           {
             "type": "h2",
-            "text": "5. Blocking users"
+            "text": "5. How to hide a user’s content"
           },
           {
             "type": "p",
-            "text": "You can hide a user's content: open their listing → “⋯” → “Block author”. Their content will no longer be shown to you, and we will be notified to review it."
+            "text": "Open the business card → “⋯” → “Block author”. You will no longer see their content, and we will be notified to review it."
           },
           {
             "type": "h2",
@@ -841,16 +955,16 @@
           },
           {
             "type": "p",
-            "text": "Depending on severity: rejection or removal of content, a warning, temporary or permanent account suspension."
+            "text": "Depending on how serious the breach is: rejection or removal of content, a warning, or a temporary or permanent account block. We may report content showing signs of a crime to law enforcement."
           }
         ]
       },
       "deleteAccount": {
-        "title": "Account and data deletion",
+        "title": "Delete Account and Data",
         "blocks": [
           {
             "type": "p",
-            "text": "This page explains how to delete your **{app}** account and associated data. Developer: {company}."
+            "text": "This page explains how to delete your **{app}** account and the data linked to it. Developer: {company}."
           },
           {
             "type": "h2",
@@ -866,7 +980,7 @@
           },
           {
             "type": "p",
-            "text": "The account is deactivated immediately and the data is deleted within 30 days."
+            "text": "The account is deactivated immediately, and the data is deleted within 30 days."
           },
           {
             "type": "h2",
@@ -874,23 +988,27 @@
           },
           {
             "type": "p",
-            "text": "Send an email from the address or phone linked to your account to:"
+            "text": "Send an email from the address linked to your account, or include the phone number the account is registered to."
+          },
+          {
+            "type": "label",
+            "text": "Address"
           },
           {
             "type": "copy",
             "value": "{emailPlain}"
           },
           {
-            "type": "p",
-            "text": "Subject:"
+            "type": "label",
+            "text": "Subject"
           },
           {
             "type": "copy",
-            "value": "{deleteSubject}"
+            "value": "{app} account deletion"
           },
           {
             "type": "p",
-            "text": "We confirm receipt within 3 business days and may ask you to confirm the account belongs to you. After confirmation the data is deleted within 30 days."
+            "text": "We confirm receipt within 3 business days. To protect your account, we may ask you to confirm it is yours (for example, with a code sent to the linked email or phone). After confirmation, the data is deleted within 30 days."
           },
           {
             "type": "h2",
@@ -899,10 +1017,10 @@
           {
             "type": "ul",
             "items": [
-              "Account data: name, email, phone, password.",
+              "Account data: name, email, phone number, password hash, Apple or Google sign-in identifiers.",
               "Favourite places, notification settings, push token.",
-              "Your reports and error reports (de-identified).",
-              "Business listings you created are unpublished and deleted unless transferred to another representative of that business."
+              "Business cards you created are unpublished and deleted, unless you handed them over to another representative of the business.",
+              "Your reports and error messages are anonymised: the content stays, the link to you does not."
             ]
           },
           {
@@ -912,9 +1030,9 @@
           {
             "type": "ul",
             "items": [
-              "Technical logs and crash reports for up to 90 days, not linked to your account.",
-              "Data we are legally required to keep, for the required period.",
-              "Backups are overwritten within 30 days."
+              "Crash reports and technical logs: up to 90 days, not linked to your account.",
+              "Backups: up to 30 days, then overwritten.",
+              "Data with a retention period set by law: for that period."
             ]
           },
           {
@@ -923,7 +1041,7 @@
           },
           {
             "type": "p",
-            "text": "You can delete individual photos, a business listing or favourites in the app, or ask us to do it by emailing {email}."
+            "text": "You can delete individual photos, a business card or favourite places in the app, or ask us by email at {email}."
           }
         ]
       },
@@ -932,7 +1050,7 @@
         "blocks": [
           {
             "type": "p",
-            "text": "We are here to help with anything about **{app}**, from signing in to listing a business on the map."
+            "text": "We help with any **{app}** question, from signing in to listing a business on the map."
           },
           {
             "type": "h2",
@@ -955,25 +1073,25 @@
             "items": [
               "Install {app}, choose your complex and create an account.",
               "On the map, tap “+ Add business”.",
-              "Fill in the name, category, building, section, entrance and hours. Add a storefront photo.",
+              "Fill in the name, category, building, section, entrance and hours. Add a photo of the front.",
               "Submit for moderation. Review usually takes up to 24 hours."
             ]
           },
           {
             "type": "h2",
-            "text": "Common issues"
+            "text": "Common problems"
           },
           {
             "type": "h3",
-            "text": "I can't see my position on the map"
+            "text": "I can’t see my location on the map"
           },
           {
             "type": "p",
-            "text": "Make sure the app has location access in your phone settings. Without it the map works, just without your pin."
+            "text": "Check that the app has location access in your phone settings. Without it the map works, just without your marker."
           },
           {
             "type": "h3",
-            "text": "Notifications don't arrive"
+            "text": "Notifications don’t arrive"
           },
           {
             "type": "p",
@@ -985,7 +1103,7 @@
           },
           {
             "type": "p",
-            "text": "Open the place card → “Report a mistake”. We will check and fix it."
+            "text": "Open the business card → “Report a mistake”. We will check and fix it. If the button is not available, write to {email}."
           },
           {
             "type": "h3",
@@ -993,27 +1111,15 @@
           },
           {
             "type": "p",
-            "text": "See the [Account deletion](/delete-account) page."
+            "text": "See [Delete Account and Data](/delete-account)."
           },
           {
             "type": "h2",
-            "text": "How to connect your complex"
+            "text": "Connect your complex"
           },
           {
             "type": "p",
-            "text": "A homeowners' association, management company, developer or group of residents can send a request to {email}. Include the complex name and address and a contact person."
-          },
-          {
-            "type": "h2",
-            "text": "Documents"
-          },
-          {
-            "type": "ul",
-            "items": [
-              "[Privacy Policy](/privacy)",
-              "[Terms of Use](/terms)",
-              "[Content Rules](/content-rules)"
-            ]
+            "text": "A homeowners’ association, management company, developer or residents’ group can apply at {email}. Include the complex name and address and a contact person."
           },
           {
             "type": "h2",
@@ -1021,11 +1127,92 @@
           },
           {
             "type": "p",
-            "text": "{company}, {companyId}. {address}."
+            "text": "{company}, {companyId}, {address}."
+          }
+        ]
+      },
+      "cookies": {
+        "title": "Cookie Policy",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "This page explains which cookies and similar technologies the **{app}** website uses and why."
+          },
+          {
+            "type": "note",
+            "text": "**In short.** We only use necessary cookies to remember the site language. No ads, no analytics, no tracking."
+          },
+          {
+            "type": "h2",
+            "text": "1. What cookies are"
+          },
+          {
+            "type": "p",
+            "text": "Cookies are small text files that a website stores in your browser. They help the site work properly, for example by remembering your settings."
+          },
+          {
+            "type": "h2",
+            "text": "2. What we use"
+          },
+          {
+            "type": "table",
+            "head": [
+              "Name",
+              "Purpose",
+              "Type",
+              "Duration"
+            ],
+            "rows": [
+              [
+                "NEXT_LOCALE",
+                "Remembers the site language (Ukrainian or English)",
+                "Necessary, cookie",
+                "Until you close the browser"
+              ],
+              [
+                "qm-cookie-notice",
+                "Remembers that you closed the cookie notice",
+                "Necessary, browser local storage",
+                "Until you clear site data"
+              ]
+            ]
+          },
+          {
+            "type": "h2",
+            "text": "3. What we don’t use"
+          },
+          {
+            "type": "p",
+            "text": "We don’t use advertising, analytics or third-party tracking cookies, and we don’t share cookie data with third parties."
+          },
+          {
+            "type": "h2",
+            "text": "4. Do we need your consent"
+          },
+          {
+            "type": "p",
+            "text": "Necessary cookies are required for the site to work, so they don’t need separate consent. If we ever add analytics or other optional cookies, we will ask for your consent before using them and update this page."
+          },
+          {
+            "type": "h2",
+            "text": "5. How to manage cookies"
+          },
+          {
+            "type": "p",
+            "text": "You can delete or block cookies in your browser settings. The site will still work, but it may not remember your language."
+          },
+          {
+            "type": "h2",
+            "text": "6. Contacts"
+          },
+          {
+            "type": "p",
+            "text": "Send questions about cookies and personal data to {email}. How we process personal data is described in the [Privacy Policy](/privacy)."
           }
         ]
       }
-    }
+    },
+    "dbRegion": "the European Union"
   },
   "complexes": {
     "eyebrow": "Where QMap works",
@@ -1033,14 +1220,17 @@
     "text": "Pick your complex and see only its businesses, services and routes. We launched in Varshavskyi and have already added Dibrova.",
     "choose": "Choose a complex",
     "live": "Live",
-    "first": "First launch",
-    "new": "New",
     "yours": "+ Your complex",
     "open": "Open in the app",
+    "openModal": {
+      "title": "Open {name} in QMap",
+      "text": "Install the app and choose {name} in the list of complexes. The map with all places, entrances and routes opens right away."
+    },
     "items": {
       "varshavskyi": {
         "name": "Varshavskyi",
-        "text": "The first complex on QMap. This is where we launched the map and set up business moderation.",
+        "badge": "First on QMap",
+        "text": "Where QMap started. The map shows buildings, sections and entrances, plus cafés, pharmacies, shops and services with opening hours and a route to the right door.",
         "pins": [
           {
             "name": "Zerno Coffee",
@@ -1071,7 +1261,8 @@
       },
       "dibrova": {
         "name": "Dibrova",
-        "text": "Our second complex. The map is open to residents, and business owners are adding their places.",
+        "badge": "Just added",
+        "text": "The newest complex on QMap. Residents can already see places on the map, and business owners add their cards, hours and photos for free.",
         "pins": [
           {
             "name": "Acorn Coffee",
@@ -1109,7 +1300,43 @@
         "We prepare the complex map",
         "We invite residents and businesses"
       ],
-      "cta": "Send a request"
+      "cta": "Send a request",
+      "form": {
+        "title": "Want QMap in your complex?",
+        "intro": "Tell us about your complex and we will get in touch to discuss connecting it.",
+        "complex": "Complex name",
+        "complexPh": "For example, Varshavskyi",
+        "address": "Address",
+        "addressPh": "City, street, building number",
+        "role": "Who you are",
+        "roles": {
+          "osbb": "Homeowners' association",
+          "management": "Management company",
+          "developer": "Developer",
+          "resident": "Resident / group of residents",
+          "other": "Other"
+        },
+        "name": "Your name",
+        "contact": "Phone, Telegram or email",
+        "contactPh": "+380… or @username",
+        "comment": "Comment",
+        "commentPh": "How many buildings, are there businesses, anything important",
+        "submit": "Send request",
+        "sending": "Sending…",
+        "error": "We couldn't send your request. Please try again a little later.",
+        "note": "By sending this form you agree that we will use this data to contact you about connecting your complex.",
+        "sentTitle": "Request sent",
+        "sentText": "Thank you! We will get in touch soon.",
+        "done": "Done"
+      }
     }
+  },
+  "modal": {
+    "close": "Close"
+  },
+  "cookieNotice": {
+    "text": "We only use necessary cookies to remember the site language. No ads, no tracking.",
+    "more": "Learn more",
+    "ok": "Got it"
   }
 }
