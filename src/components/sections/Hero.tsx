@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import StoreBadges from "@/components/ui/StoreBadges";
 import IsoMap from "./IsoMap";
-import ComplexRequestModal from "./ComplexRequestModal";
+import BusinessRequestModal from "./BusinessRequestModal";
 
 type Fact = { value: string; label: string };
 
@@ -39,7 +39,7 @@ export default async function Hero() {
 
           <div className={`flex animate-rise-in flex-col gap-3 ${stagger[3]}`}>
             <StoreBadges />
-            <ComplexRequestModal
+            <BusinessRequestModal
               triggerClassName="group flex w-full max-w-[460px] items-center gap-3.5 rounded-2xl border border-orange-soft bg-tint p-3 pr-4 text-left transition hover:-translate-y-0.5 hover:border-orange hover:bg-white hover:shadow-[0_18px_34px_-22px_rgba(224,82,10,.7)]"
               trigger={
                 <>

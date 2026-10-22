@@ -2,24 +2,26 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const W = 424;
-const H = 865;
+const W = 1315;
+const H = 2672;
+const OX = 68;
+const OY = 58;
 const box = (x1: number, y1: number, x2: number, y2: number) => ({
-  left: `${(x1 / W) * 100}%`,
-  top: `${(y1 / H) * 100}%`,
+  left: `${((x1 + OX) / W) * 100}%`,
+  top: `${((y1 + OY) / H) * 100}%`,
   width: `${((x2 - x1) / W) * 100}%`,
   height: `${((y2 - y1) / H) * 100}%`,
 });
 
 const FIELDS = [
-  { frame: box(37, 125, 387, 161), cover: box(45, 128, 380, 158), text: "Кав'ярня «Ранок»" },
-  { frame: box(37, 209, 387, 295), cover: box(45, 214, 380, 290), text: "Свіжа випічка й кава з собою. Вхід з двору.", multiline: true },
-  { frame: box(37, 495, 387, 532), cover: box(70, 498, 358, 529), text: "Буд. 3, секція 2" },
-  { frame: box(37, 542, 387, 579), cover: box(45, 545, 380, 576), text: "+380 67 123 45 67" },
-  { frame: box(37, 588, 387, 625), cover: box(45, 591, 380, 622), text: "ranok.coffee" },
+  { frame: box(48, 333, 1130, 450), cover: box(76, 345, 1110, 438), text: "Кав'ярня «Ранок»" },
+  { frame: box(48, 592, 1130, 861), cover: box(76, 610, 1110, 845), text: "Свіжа випічка й кава з собою. Вхід з двору.", multiline: true },
+  { frame: box(48, 1469, 1130, 1590), cover: box(150, 1480, 1040, 1580), text: "Буд. 3, секція 2" },
+  { frame: box(48, 1615, 1130, 1732), cover: box(76, 1627, 1110, 1720), text: "+380 67 123 45 67" },
+  { frame: box(48, 1757, 1130, 1874), cover: box(76, 1769, 1110, 1862), text: "ranok.coffee" },
 ];
-const SAVE = box(37, 773, 387, 814);
-const SCREEN = box(21, 16, 403, 848);
+const SAVE = box(48, 2324, 1130, 2453);
+const SCREEN = box(0, 0, 1179, 2556);
 
 type Phase = "typing" | "press" | "done" | "reset";
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -82,12 +84,12 @@ export default function AddFormDemo() {
   }, []);
 
   return (
-    <div ref={ref} aria-hidden className="pointer-events-none absolute inset-0 text-[3.55cqw] leading-[1.3] text-ink">
+    <div ref={ref} aria-hidden className="pointer-events-none absolute inset-0 text-[3.7cqw] leading-[1.3] text-ink">
       {FIELDS.map((f, i) => (
         <div key={i}>
           <div
             style={f.frame}
-            className={`absolute rounded-[3.3cqw] outline-2 transition-[outline-color] duration-200 ${
+            className={`absolute rounded-[3.4cqw] outline-2 transition-[outline-color] duration-200 ${
               active === i ? "outline-orange" : "outline-transparent"
             }`}
           />
@@ -108,7 +110,7 @@ export default function AddFormDemo() {
       ))}
       <div
         style={SAVE}
-        className={`absolute rounded-[3.8cqw] transition duration-200 ${phase === "press" ? "scale-95 bg-black/15" : "bg-transparent"}`}
+        className={`absolute rounded-[4.9cqw] transition duration-200 ${phase === "press" ? "scale-95 bg-black/15" : "bg-transparent"}`}
       />
       <MapReveal open={phase === "done"} />
     </div>

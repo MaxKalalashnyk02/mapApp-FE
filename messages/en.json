@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "QMap: the live map of your residential complex",
-    "description": "Cafés, services and shops of your residential complex on an interactive map, down to the section and entrance. Already live in Varshavskyi and Dibrova."
+    "title": "QMap: the digital map of your residential complex",
+    "description": "Cafés, services and shops of your residential complex on an interactive map, down to the section and entrance. Already live in Varshavskyi and Dibrova park."
   },
   "nav": {
     "label": "Sections",
@@ -22,9 +22,9 @@
     "googlePlay": "Get it on"
   },
   "hero": {
-    "chip": "The live map of your complex",
+    "chip": "The digital map of your complex",
     "titleStart": "Everything near your home, on a",
-    "titleHighlight": "living map",
+    "titleHighlight": "digital map",
     "lede": "QMap shows the cafés, services and shops of your residential complex down to the section and entrance. Businesses are added in minutes, and the map updates right after moderation.",
     "business": {
       "title": "Own a business in the complex?",
@@ -68,9 +68,9 @@
   ],
   "problem": {
     "eyebrow": "Why QMap",
-    "questionStart": "How many times have you crossed the road for coffee when",
-    "questionHighlight": "there was a café in your own courtyard?",
-    "text": "In a large complex new places open every month, move and change their hours. Residents' chats lose this information fast. QMap keeps it in one place and always up to date.",
+    "questionStart": "You know your complex.",
+    "questionHighlight": "But do you know everything it has to offer?",
+    "text": "Cafés, shops, services and other businesses near your home — on one interactive map. QMap helps you find what you need, discover new places and keep up-to-date information at hand.",
     "items": [
       {
         "title": "Find what you need in a minute",
@@ -285,22 +285,27 @@
     "text": "Your closest customers live a few minutes' walk away. QMap helps them learn you are nearby and find your exact door.",
     "perks": [
       {
+        "icon": "gift",
         "title": "Free listing",
         "text": "A place card with photos, hours and contacts at no cost."
       },
       {
+        "icon": "users",
         "title": "Customers next door",
-        "text": "Residents of your complex who are a few minutes' walk away see you."
+        "text": "Residents of your complex and nearby complexes who are a few minutes’ walk away see you."
       },
       {
+        "icon": "bell",
         "title": "Opening announcement",
         "text": "When you appear on the map, residents get a push notification."
       },
       {
+        "icon": "pin",
         "title": "Route to your door",
         "text": "Customers see the section and entrance, so they don't wander the courtyard or call to ask."
       },
       {
+        "icon": "sliders",
         "title": "Full control",
         "text": "Change hours, photos or the “Temporarily closed” status any time."
       }
@@ -317,19 +322,15 @@
       "promoStatus": "Active",
       "verified": "Verified"
     },
-    "stepsTitle": "How to join",
+    "stepsTitle": "How to add your business to the QMap map",
     "steps": [
-      "Install QMap and choose your complex",
-      "Tap “+ Add business” and fill in the card",
-      "After moderation your place appears on the map"
+      "Sign up in QMap and choose your complex",
+      "Go to your profile and tap “Open business account”",
+      "Tap “Add business” and fill in your place card"
     ],
     "cta": "Add a business",
     "ctaAlt": "Ask a question",
-    "note": "Listing is free. All you need is a QMap account and a few minutes.",
-    "add": {
-      "title": "Download QMap",
-      "text": "Places are added right in the app: install QMap, choose your complex and tap “+ Add business”."
-    },
+    "note": "Your place appears on the map after moderation. Listing is free.",
     "ask": {
       "title": "Ask a question",
       "intro": "Tell us what you would like to know about listing your place and we will get back to you.",
@@ -347,6 +348,31 @@
       "sentTitle": "Question sent",
       "sentText": "Thank you! We will get back to you soon.",
       "done": "Done"
+    },
+    "request": {
+      "title": "Want your business to appear on the QMap map?",
+      "intro": "Tell us about your business and we will get in touch to discuss the details.",
+      "complex": "Complex name",
+      "complexPh": "For example, Varshavskyi",
+      "business": "Business name",
+      "businessPh": "For example, Ranok café",
+      "name": "Your name",
+      "contact": "Phone",
+      "contactPh": "+380 XX XXX XX XX",
+      "comment": "Comment",
+      "commentPh": "Café, salon, medical centre…",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "error": "We couldn’t send your request. Please try again a little later.",
+      "sentTitle": "Request sent",
+      "sentText": "Thank you! We will get in touch soon.",
+      "done": "Done"
+    },
+    "add": {
+      "title": "Download QMap",
+      "text": "Places are added right in the app, and it only takes a few minutes.",
+      "formText": "Would you rather we helped?",
+      "formCta": "Leave a request"
     }
   },
   "faq": {
@@ -377,7 +403,7 @@
       },
       {
         "q": "Which complexes is QMap in?",
-        "a": "Right now in Varshavskyi, where we first launched, and in Dibrova. You choose your complex in the app and can change it in your profile."
+        "a": "Right now in Varshavskyi, where we first launched, and in Dibrova park. You choose your complex in the app and can change it in your profile."
       },
       {
         "q": "How do we connect our complex?",
@@ -408,11 +434,11 @@
   "about": {
     "eyebrow": "About",
     "title": "Who is behind QMap",
-    "p1": "{company} develops QMap, a digital map of residential complexes. We launched in Varshavskyi, added Dibrova and are ready to connect new complexes. We help residents quickly find services near home and help local businesses get noticed by their neighbours.",
+    "p1": "{company} develops QMap, a digital map of residential complexes. We launched in Varshavskyi, added Dibrova park and are ready to connect new complexes. We help residents quickly find services near home and help local businesses get noticed by their neighbours.",
     "p2": "Our goal is simple: information about life in every complex should be accurate, gathered in one place and available to all residents."
   },
   "footer": {
-    "tagline": "The live map of residential complexes: businesses, services and routes inside the complex.",
+    "tagline": "The digital map of residential complexes: businesses, services and routes inside the complex.",
     "docs": "Documents",
     "contacts": "Contacts",
     "support": "Support",
@@ -1217,7 +1243,7 @@
   "complexes": {
     "eyebrow": "Where QMap works",
     "title": "One app for different complexes",
-    "text": "Pick your complex and see only its businesses, services and routes. We launched in Varshavskyi and have already added Dibrova.",
+    "text": "Pick your complex and see only its businesses, services and routes. We launched in Varshavskyi and have already added Dibrova park.",
     "choose": "Choose a complex",
     "live": "Live",
     "yours": "+ Your complex",
@@ -1260,7 +1286,7 @@
         ]
       },
       "dibrova": {
-        "name": "Dibrova",
+        "name": "Dibrova park",
         "badge": "Just added",
         "text": "The newest complex on QMap. Residents can already see places on the map, and business owners add their cards, hours and photos for free.",
         "pins": [
@@ -1312,7 +1338,7 @@
         "contact": "Phone or Telegram",
         "contactPh": "+380… or @username",
         "comment": "Comment",
-        "commentPh": "What kind of business do you have?",
+        "commentPh": "How many buildings, are there businesses, anything important",
         "submit": "Send request",
         "sending": "Sending…",
         "error": "We couldn't send your request. Please try again a little later.",
@@ -1339,5 +1365,9 @@
     "finding": "Finding the address…",
     "done": "Done",
     "clear": "Clear address"
+  },
+  "downloadModal": {
+    "title": "Download QMap",
+    "text": "Choose your complex in the app and instantly see every place, entrance and route near your home."
   }
 }

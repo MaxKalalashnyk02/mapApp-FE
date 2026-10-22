@@ -13,8 +13,8 @@ export default async function Faq() {
   const vars = await getSiteVars(locale);
   const items = t.raw("items") as QA[];
   return (
-    <section id="faq" className="pb-16 sm:pb-24">
-      <Container className="grid gap-4 md:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] md:gap-14">
+    <section id="faq" className="pb-12 sm:pb-16">
+      <Container className="grid gap-4 md:grid-cols-[minmax(0,.8fr)_minmax(0,1.2fr)] md:gap-10">
         <div className="flex flex-col gap-6">
           <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={rich(t.raw("text") as string, vars)} />
           <FaqQuestionModal trigger={t("askCta")} />

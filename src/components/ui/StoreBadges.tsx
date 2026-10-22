@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { site } from "@/config/site";
 
 const AppleIcon = () => (
@@ -15,8 +15,8 @@ const PlayIcon = () => (
   </svg>
 );
 
-export default async function StoreBadges({ className = "" }: { className?: string }) {
-  const t = await getTranslations("stores");
+export default function StoreBadges({ className = "" }: { className?: string }) {
+  const t = useTranslations("stores");
   const items = [
     { url: site.iosUrl, icon: <AppleIcon />, small: t("appStore"), big: "App Store" },
     { url: site.androidUrl, icon: <PlayIcon />, small: t("googlePlay"), big: "Google Play" },

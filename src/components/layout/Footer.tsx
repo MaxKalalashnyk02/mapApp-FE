@@ -16,7 +16,7 @@ export default async function Footer() {
   const vars = await getSiteVars(locale);
 
   return (
-    <footer className="mt-10 border-t border-line bg-tint pt-14 pb-8">
+    <footer className="mt-6 border-t border-line bg-tint pt-10 pb-8">
       <Container>
         <div className="grid grid-cols-2 gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
           <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
@@ -47,7 +47,7 @@ export default async function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-11 flex flex-wrap justify-between gap-4 border-t border-line pt-5 text-sm text-ink-3">
+        <div className="mt-8 flex flex-wrap justify-between gap-4 border-t border-line pt-5 text-sm text-ink-3">
           <span>© {new Date().getFullYear()} {rich("{company}", vars)}. {t("rights")}</span>
           <span>{t("trademarks")}</span>
         </div>

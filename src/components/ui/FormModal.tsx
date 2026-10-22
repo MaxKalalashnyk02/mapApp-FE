@@ -12,7 +12,7 @@ export const labelCls = "flex flex-col gap-1.5 text-sm font-semibold";
 
 type Props = {
   endpoint: string;
-  ns: "complexes.request.form" | "business.ask" | "faq.ask";
+  ns: "complexes.request.form" | "business.request" | "business.ask" | "faq.ask";
   trigger: ReactNode;
   triggerClassName: string;
   children: ReactNode;

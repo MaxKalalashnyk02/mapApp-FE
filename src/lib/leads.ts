@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const recent = new Map<string, number[]>();
 
 export type Lead = {
-  type: "complex" | "business" | "question";
+  type: "complex" | "listing" | "business" | "question";
   name: string;
   contact: string;
   complex?: string;

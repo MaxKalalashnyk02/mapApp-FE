@@ -6,6 +6,8 @@ import { Link, usePathname } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import { LogoMark } from "@/components/ui/Logo";
 import TypingLogo from "@/components/ui/TypingLogo";
+import Modal from "@/components/ui/Modal";
+import StoreBadges from "@/components/ui/StoreBadges";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const SECTIONS = ["features", "business", "complexes", "how", "faq"] as const;
@@ -54,12 +56,10 @@ export default function Header() {
 
         <div className="ml-auto flex items-center gap-3 xl:ml-0">
           <LanguageSwitcher className="hidden sm:inline-flex" />
-          <Link
-            href="/#download"
+          <DownloadModal
+            label={t("download")}
             className="hidden rounded-full bg-orange px-[18px] py-[11px] text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(255,107,26,.7)] transition hover:-translate-y-0.5 hover:bg-orange-deep sm:inline-flex"
-          >
-            {t("download")}
-          </Link>
+          />
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
@@ -96,16 +96,28 @@ export default function Header() {
           ))}
           <div className="mt-4 flex flex-wrap items-center justify-between gap-4 border-t border-line px-4 pt-6">
             <LanguageSwitcher />
-            <Link
-              href="/#download"
-              onClick={() => setOpen(false)}
+            <DownloadModal
+              label={t("download")}
               className="inline-flex rounded-full bg-orange px-6 py-3.5 font-semibold text-white"
-            >
-              {t("download")}
-            </Link>
+            />
           </div>
         </Container>
       </div>
     </>
+  );
+}
+
+function DownloadModal({ label, className, onOpen }: { label: string; className: string; onOpen?: () => void }) {
+  const t = useTranslations("downloadModal");
+  return (
+    <Modal trigger={label} triggerClassName={className} label={t("title")} onOpen={onOpen}>
+      <div className="flex flex-col gap-5">
+        <div className="pr-10">
+          <h3 className="text-2xl font-bold">{t("title")}</h3>
+          <p className="mt-2 text-[15px] text-ink-2">{t("text")}</p>
+        </div>
+        <StoreBadges />
+      </div>
+    </Modal>
   );
 }

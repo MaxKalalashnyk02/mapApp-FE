@@ -29,9 +29,9 @@ export default async function Complexes() {
   const t = await getTranslations("complexes");
   const steps = t.raw("request.steps") as string[];
   return (
-    <section id="complexes" className="pb-16 sm:pb-24">
+    <section id="complexes" className="pb-12 sm:pb-16">
       <Container>
-        <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={t("text")} className="mb-8 sm:mb-12" />
+        <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={t("text")} className="mb-6 sm:mb-8" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {COMPLEXES.map((c) => (
             <article key={c.id} className="reveal flex flex-col overflow-hidden rounded-[28px] border border-line bg-white">

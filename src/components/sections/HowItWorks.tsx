@@ -8,10 +8,10 @@ export default async function HowItWorks() {
   const t = await getTranslations("how");
   const steps = t.raw("steps") as Step[];
   return (
-    <section id="how" className="pb-16 sm:pb-24">
+    <section id="how" className="pb-12 sm:pb-16">
       <Container>
-        <div className="rounded-[28px] bg-ink px-5 py-12 text-white sm:px-10 sm:py-16 md:rounded-[40px] lg:px-16">
-          <SectionHead dark eyebrow={t("eyebrow")} title={t("title")} text={t("text")} className="mb-10 sm:mb-12" />
+        <div className="rounded-[28px] bg-ink px-5 py-10 text-white sm:px-10 sm:py-12 md:rounded-[40px] lg:px-16">
+          <SectionHead dark eyebrow={t("eyebrow")} title={t("title")} text={t("text")} className="mb-6 sm:mb-8" />
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
               <li key={s.title} className="reveal flex flex-col gap-2.5 rounded-[28px] border border-[#3A2C24] bg-ink-soft p-6">

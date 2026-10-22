@@ -21,7 +21,7 @@ const ITEMS = [
   {
     key: "add",
     screen: (
-      <PhoneScreenshot src="/screens/add-phone.png" alt="QMap" width={424} height={865}>
+      <PhoneScreenshot src="/screens/add-v2.png" alt="QMap" width={860} height={1747}>
         <AddFormDemo />
       </PhoneScreenshot>
     ),
@@ -48,16 +48,16 @@ const ITEMS = [
 export default async function Features() {
   const t = await getTranslations("features");
   return (
-    <section id="features" className="pt-6 pb-16 sm:pb-24">
+    <section id="features" className="pt-6 pb-12 sm:pb-16">
       <Container>
-        <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={t("text")} className="mb-8 sm:mb-12" />
+        <SectionHead eyebrow={t("eyebrow")} title={t("title")} text={t("text")} className="mb-4 sm:mb-6" />
         {ITEMS.map(({ key, screen }, i) => {
           const ticks = t.raw(`items.${key}.ticks`) as string[];
           const rev = i % 2 === 1;
           return (
             <article
               key={key}
-              className={`group reveal grid items-center gap-7 py-10 md:grid-cols-2 md:gap-16 md:py-14 ${i ? "border-t border-line" : ""}`}
+              className={`group reveal grid items-center gap-6 md:grid-cols-2 md:gap-12 ${i ? "border-t border-line py-8 md:py-10" : "pt-2 pb-8 md:pb-10"}`}
             >
               <div className={`flex min-w-0 flex-col gap-4 ${rev ? "md:order-2" : ""}`}>
                 <span className="eyebrow">{t(`items.${key}.eyebrow`)}</span>
@@ -65,7 +65,7 @@ export default async function Features() {
                 <p className="max-w-[32em] text-[17.5px] text-ink-2">{t(`items.${key}.text`)}</p>
                 <ul className="tick-list mt-1.5 grid gap-2.5">{ticks.map((x) => <li key={x}>{x}</li>)}</ul>
               </div>
-              <div className="relative grid min-w-0 place-items-center md:min-h-[560px]">
+              <div className="relative grid min-w-0 place-items-center">
                 <div aria-hidden className="absolute aspect-square w-[78%] max-w-[420px] rounded-full bg-[radial-gradient(circle,var(--color-tint-2),transparent_70%)]" />
                 {screen}
               </div>

@@ -15,9 +15,9 @@ export default async function Problem() {
   const t = await getTranslations("problem");
   const items = t.raw("items") as Item[];
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-10 sm:py-14">
       <Container>
-        <div className="grid gap-8 rounded-[28px] bg-tint px-5 py-10 sm:px-10 sm:py-14 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-14 md:rounded-[40px] lg:px-16">
+        <div className="grid gap-8 rounded-[28px] bg-tint px-5 py-8 sm:px-10 sm:py-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-10 md:rounded-[40px] lg:px-16">
           <div className="reveal flex flex-col gap-5">
             <span className="eyebrow">{t("eyebrow")}</span>
             <p className="font-display text-[clamp(28px,4vw,52px)] leading-[1.08] font-bold tracking-[-0.025em] text-balance">
